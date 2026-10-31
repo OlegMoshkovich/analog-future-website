@@ -2,16 +2,34 @@
 @import "tw-animate-css";
 @import "../vendor/shadcn-tailwind-4.13.0.css";
 
+@font-face {
+  font-family: "Karla";
+  src: url("/fonts/Karla-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/fonts/InstrumentSans-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 75% 100%;
+  font-display: swap;
+}
+
 :root {
-  --af-ink: #11110f;
+  --af-ink: #ffffff;
   --af-charcoal: #292a27;
-  --af-paper: #eeeae1;
-  --af-warm: #f6f0e7;
+  --af-paper: #292a27;
+  --af-warm: #ffffff;
   --af-lavender: #9fa8ff;
   --af-lavender-light: #bfc5fd;
-  --af-line: rgba(17, 17, 15, 0.28);
+  --af-line: rgba(255, 255, 255, 0.22);
   --af-gutter: clamp(1.25rem, 3vw, 2.5625rem);
   --af-content: 85.0625rem;
+  --af-paper-grain-opacity: 0.11;
 
   /* Compatibility tokens used by the interactive project pages. */
   --ink: var(--af-ink);
@@ -38,11 +56,32 @@ html {
 
 body {
   margin: 0;
+  isolation: isolate;
   background: var(--af-paper);
   color: var(--af-ink);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* A quiet, static paper finish shared by every page and project. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  user-select: none;
+  background: url("/textures/paper-grain.svg") repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: soft-light;
+  opacity: var(--af-paper-grain-opacity);
+}
+
+@media print, (forced-colors: active) {
+  body::after {
+    display: none;
+  }
 }
 
 a {
@@ -64,12 +103,69 @@ textarea {
 
 ::selection {
   background: var(--af-lavender);
-  color: var(--af-ink);
+  color: var(--af-charcoal);
 }
 
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
+}
+
+/* Preview/runtime utility contract retained for the Sites component catalog. */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scroll-fade-reveal-b {
+  mask-image: linear-gradient(to bottom, #000 82%, transparent);
+  animation: scroll-fade-reveal-b 240ms ease-out both;
+}
+
+.tw-shimmer {
+  animation: tw-shimmer 1.8s linear infinite;
+}
+
+@keyframes scroll-fade-reveal-b {
+  from { opacity: 0; transform: translateY(0.25rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tw-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* Keep every navigation destination available on narrow screens. */
+@media (max-width: 600px) {
+  main .project-nav.project-nav {
+    column-gap: 12px;
+    padding-inline: 20px;
+  }
+
+  main .project-nav.project-nav nav {
+    gap: 12px;
+    font-size: 10px;
+    letter-spacing: .06em;
+  }
+
+  main .project-nav.project-nav nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade-reveal-b,
+  .tw-shimmer {
+    animation: none;
+  }
 }
 
 .af-home {
@@ -163,7 +259,7 @@ textarea {
 .af-wordmark__future {
   top: 0.82em;
   left: 0.72em !important;
-  color: var(--af-lavender);
+  color: var(--af-warm);
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
 }
@@ -212,7 +308,7 @@ textarea {
 .af-hero h1 em {
   margin-top: 0.06em;
   margin-left: 0.6em;
-  color: var(--af-lavender-light);
+  color: var(--af-lavender);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -236,14 +332,14 @@ textarea {
 .af-hero__services span {
   display: inline-block;
   width: 1.8rem;
-  color: var(--af-lavender);
+  color: var(--af-warm);
 }
 
 .af-hero__cue {
   position: absolute;
   bottom: 3.35rem;
   left: 50%;
-  color: var(--af-lavender);
+  color: var(--af-warm);
   transform: translateX(-50%);
 }
 
@@ -291,18 +387,22 @@ textarea {
 
 .af-work__inner {
   width: min(100%, var(--af-content));
+  height: 142.5rem;
   margin: 0 auto;
-  padding: 2.625rem var(--af-gutter) 10rem;
+  padding: 2.625rem var(--af-gutter);
 }
 
 .af-work__inner > .af-section-label {
-  margin-bottom: 3.55rem;
+  height: 1.375rem;
+  margin-bottom: 3rem;
 }
 
 .af-feature-project {
   display: grid;
-  grid-template-columns: minmax(0, 1.878fr) minmax(21rem, 1fr);
-  border: 1px solid rgba(17, 17, 15, 0.18);
+  grid-template-columns: minmax(0, 836fr) minmax(0, 445fr);
+  height: 43.3125rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
 }
 
 .af-feature-project__artwork {
@@ -323,38 +423,55 @@ textarea {
 }
 
 .af-feature-project__content {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   min-height: 100%;
-  padding: 2.5rem;
-  border-left: 1px solid rgba(17, 17, 15, 0.18);
+  padding: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.af-feature-project__content > .af-micro:first-child,
+.af-feature-project__category,
+.af-feature-project h3,
+.af-feature-project__description,
+.af-feature-project__services {
+  position: absolute;
+  right: 2.5rem;
+  left: 2.5rem;
+}
+
+.af-feature-project__content > .af-micro:first-child {
+  top: 2.5rem;
 }
 
 .af-feature-project__category {
   max-width: 23rem;
-  margin-top: 1.35rem;
+  top: 4.625rem;
+  margin: 0;
   line-height: 1.4;
 }
 
 .af-feature-project h3 {
-  margin: 4.4rem 0 0;
+  top: 11.5rem;
+  margin: 0;
   font-size: clamp(3.25rem, 4.8vw, 4.1rem);
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.196;
   letter-spacing: -0.071em;
 }
 
 .af-feature-project__description {
   max-width: 23rem;
-  margin: 3rem 0 0;
+  top: 20.5rem;
+  margin: 0;
   font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(1.15rem, 1.65vw, 1.405rem);
   line-height: 1.18;
 }
 
 .af-feature-project__services {
-  margin-top: auto;
-  padding-top: 2.15rem;
+  top: 36.125rem;
+  margin: 0;
+  padding-top: 2.125rem;
   border-top: 1px solid var(--af-line);
   line-height: 1.6;
   letter-spacing: 0.1em;
@@ -363,8 +480,8 @@ textarea {
 .af-project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.25rem 0.1875rem;
-  margin-top: 5rem;
+  gap: 2.875rem 0.1875rem;
+  margin-top: 7.4375rem;
 }
 
 .af-project-card {
@@ -395,16 +512,16 @@ textarea {
 }
 
 .af-project-card__content {
+  display: flex;
+  height: 13.375rem;
   min-height: 13.375rem;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 1.25rem;
 }
 
-.af-project-card__content > .af-micro + .af-micro {
-  margin-top: 0.5rem;
-}
-
 .af-project-card h3 {
-  margin: 0.7rem 0 0;
+  margin: 0;
   font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(2.25rem, 3.5vw, 2.98rem);
   font-weight: 500;
@@ -413,7 +530,7 @@ textarea {
 }
 
 .af-project-card__tags {
-  margin: 0.75rem 0 0;
+  margin: 0;
   font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
@@ -423,6 +540,7 @@ textarea {
 
 .af-approach {
   background: var(--af-lavender-light);
+  color: var(--af-charcoal);
 }
 
 .af-approach__inner {
@@ -443,6 +561,7 @@ textarea {
 }
 
 .af-approach h2 {
+  grid-column: 3;
   margin: -0.35rem 0 0;
   font-size: clamp(1.75rem, 2.3vw, 1.965rem);
   font-weight: 400;
@@ -456,9 +575,10 @@ textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-self: end;
   margin-top: 5.45rem;
-  border-top: 1px solid rgba(17, 17, 15, 0.52);
-  border-left: 1px solid rgba(17, 17, 15, 0.52);
-  border-bottom: 1px solid rgba(17, 17, 15, 0.52);
+  background: var(--af-lavender);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .af-process-card {
@@ -466,7 +586,7 @@ textarea {
   min-height: 32rem;
   flex-direction: column;
   padding: 1.2rem;
-  border-right: 1px solid rgba(17, 17, 15, 0.52);
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .af-process-card__copy {
@@ -494,7 +614,7 @@ textarea {
 .af-process-card__services {
   margin: 0;
   padding-top: 1rem;
-  border-top: 1px solid rgba(17, 17, 15, 0.32);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
   font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
@@ -535,7 +655,7 @@ textarea {
 }
 
 .af-footer__cta em {
-  color: var(--af-lavender);
+  color: var(--af-warm);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -664,22 +784,50 @@ textarea {
     margin: 3rem 0 0 auto;
   }
 
+  .af-work__inner {
+    height: auto;
+  }
+
   .af-feature-project {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .af-feature-project__artwork {
-    aspect-ratio: 836 / 832;
+    aspect-ratio: 836 / 693;
   }
 
   .af-feature-project__content {
+    display: flex;
     min-height: 31rem;
-    border-top: 1px solid rgba(17, 17, 15, 0.18);
+    flex-direction: column;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
     border-left: 0;
+  }
+
+  .af-feature-project__content > .af-micro:first-child,
+  .af-feature-project__category,
+  .af-feature-project h3,
+  .af-feature-project__description,
+  .af-feature-project__services {
+    position: static;
+  }
+
+  .af-feature-project__category {
+    margin-top: 1.35rem;
   }
 
   .af-feature-project h3 {
     margin-top: 3.5rem;
+  }
+
+  .af-feature-project__description {
+    margin-top: 2rem;
+  }
+
+  .af-feature-project__services {
+    margin-top: auto;
   }
 
   .af-project-grid {
@@ -715,7 +863,7 @@ textarea {
 
   .af-process-card {
     min-height: 27rem;
-    border-bottom: 1px solid rgba(17, 17, 15, 0.52);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   }
 
   .af-process-card:last-child {
@@ -786,10 +934,18 @@ textarea {
     margin-top: 2rem;
   }
 
+  .af-feature-project__services {
+    margin-top: auto;
+  }
+
   .af-project-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 3rem;
+  }
+
+  .af-work__inner {
+    height: auto;
   }
 
   .af-project-card__content {

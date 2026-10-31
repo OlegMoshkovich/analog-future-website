@@ -1,52 +1,47 @@
 # Analog Future website
 
-Production website for Analog Future, built from the approved Figma file as a
-responsive, accessible codebase rather than a PDF or flattened page export.
+Complete approved website handoff, copied from Sites version 69 on 31 October 2026.
 
-## Current status
+The source snapshot is `7bd07ef25d15b8a461dc0918de827013b045ed75`. This branch includes the homepage, Studio page, all seven case studies, local images and fonts, interactive maps, and the final logo animations.
 
-- Homepage rebuilt from the “READY FOR DEV / Home / Desktop” frame
-- Shared wordmark, project-card, and process-card components established
-- Approved homepage artwork exported locally from Figma
-- Interactive #WeCount page and its historical data implementation preserved
-- Desktop, tablet, and mobile layout rules included
-- Production build passing
+[Developer setup and publishing guide](DEVELOPER_HANDOFF.md)
 
-The remaining case-study routes will be implemented from the corresponding
-ready-for-development Figma frames:
+## Run locally
 
-- /work/cadence
-- /work/cubed
-- /work/earthen
-- /work/valmia
-- /work/coolbuilding
-- /work/simplesite
+Use Node.js 22.13 or newer.
 
-/work/wecount already contains the working interactive reconstruction.
-
-## Technology
-
-- TypeScript
-- React / Next-compatible App Router structure
-- CSS design tokens and reusable site components
-- Client-side SVG and data interaction for #WeCount
-
-The current checkout retains its existing Vinext/Cloudflare build adapter.
-The site components themselves are not tied to a hosting provider. Once hosting
-is chosen, only the build and deployment adapter should need to change.
-
-## Local commands
-
-~~~bash
+```bash
 npm ci
-npm run dev
-npm run build
-~~~
+npx vite
+```
 
-## Design source
+## Build and check
 
-[Analog Future website in Figma](https://www.figma.com/design/QXHQAw0WusgMHZ90TDX4H6/Analog-Future-website)
+```bash
+npx vinext build
+node --test tests/*.test.mjs
+```
 
-The Figma file remains the source of truth for layout, copy, exported artwork,
-and responsive intent. Website structure, typography, links, and interactions
-are implemented natively in code.
+The existing `npm run build` wrapper is intended for Linux and requires GNU `timeout`. The direct build command above avoids that shell wrapper.
+
+## Deployment target
+
+This snapshot uses Vinext, Vite, React, and the Cloudflare Workers adapter. Keep that adapter for the closest match to the approved preview. See the handoff guide for deployment configuration and other hosting options.
+
+## Approved preview
+
+https://analog-future-case-study-preview.anjica-bananica.chatgpt.site
+
+## Routes
+
+- `/`
+- `/studio`
+- `/work/cadence`
+- `/work/cubed`
+- `/work/wecount`
+- `/work/earthen`
+- `/work/valmia`
+- `/work/coolbuilding`
+- `/work/simplesite`
+
+All project assets are in `public/`. Preserve file names, casing, and folder structure.

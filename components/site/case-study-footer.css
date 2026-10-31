@@ -1,0 +1,32 @@
+/* Shared footer flow replaces the older page-specific absolute positioning. */
+main .project-footer.project-footer--navigation {
+  display: block;
+  position: relative;
+  height: auto;
+  min-height: 0;
+  padding: 68px 41px 48px;
+}
+main .project-footer.project-footer--navigation > .project-kicker,
+main .project-footer.project-footer--navigation > .project-footer__statement {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+}
+main .project-footer.project-footer--navigation > .project-footer__statement { margin: 20px 0 40px; }
+.project-pagination {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  border-top: 1px solid rgba(255,255,255,.22);
+  padding-top: 24px;
+}
+.project-pagination__link { display: flex; flex-direction: column; gap: 10px; min-height: 64px; align-items: flex-start; }
+.project-pagination__link--next { text-align: right; align-items: flex-end; }
+.project-pagination__label { font: 500 11px/1.4 "Karla", sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+.project-pagination__title { font: 400 clamp(20px,2vw,28px)/1.2 "Instrument Sans", sans-serif; }
+@media(max-width:600px) {
+  main .project-footer.project-footer--navigation { padding: 48px 24px 36px; }
+  .project-pagination { gap: 16px; }
+  .project-pagination__label { font-size: 10px; letter-spacing: .04em; }
+}

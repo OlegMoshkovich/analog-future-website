@@ -1,0 +1,601 @@
+.earthen-page {
+  --earthen-bg: #292a27;
+  --earthen-fg: #ffffff;
+  --earthen-line: rgba(255, 255, 255, 0.22);
+  width: 100%;
+  min-height: 100vh;
+  overflow: clip;
+  background: var(--earthen-bg);
+  color: var(--earthen-fg);
+}
+
+.earthen-page .project-nav,
+.earthen-page > section,
+.earthen-page .project-footer {
+  width: min(100%, 1440px);
+  margin-inline: auto;
+}
+
+.earthen-page .project-nav {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  height: 72px;
+  padding-inline: 20px;
+}
+
+.earthen-page .project-nav__brand,
+.earthen-page .project-nav nav {
+  font: 500 12px/18px "Instrument Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.96px;
+}
+
+.earthen-page .project-nav nav {
+  display: flex;
+  gap: 24px;
+}
+
+.earthen-page .project-nav a,
+.earthen-page .project-footer a {
+  transition: opacity 180ms ease;
+}
+
+.earthen-page .project-nav a:hover,
+.earthen-page .project-footer a:hover {
+  opacity: 0.58;
+}
+
+.earthen-micro,
+.earthen-page .project-kicker {
+  margin: 0;
+  font: 500 11px/13px "Karla", "Helvetica Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.earthen-hero {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 41px 80px;
+}
+.earthen-hero__number { letter-spacing: .8px; }
+.earthen-hero h1 {
+  margin: 24px 0 0;
+  font: 700 64px/68px "Instrument Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: -1.2px;
+}
+.earthen-hero__meta { margin-top: 24px; }
+.earthen-hero__media {
+  width: 100%;
+  aspect-ratio: 1358 / 560;
+  margin: 24px 0 0;
+  overflow: hidden;
+  background: #183b32;
+}
+.earthen-hero__artwork { display: block; width: 100%; height: 100%; overflow: hidden; }
+.earthen-hero__description {
+  width: min(843px, 100%);
+  margin: 24px 0 0;
+  font: 400 20px/30px Georgia, "Times New Roman", serif;
+}
+
+.earthen-section {
+  border-top: 1px solid var(--earthen-line);
+}
+
+.earthen-problem {
+  height: 772px;
+  border-top-width: 2px;
+}
+
+.earthen-problem__inner,
+.earthen-editorial__inner {
+  display: grid;
+  grid-template-columns: 380px 1px minmax(0, 876px);
+  column-gap: 32px;
+  width: calc(100% - 119px);
+  margin-left: 41px;
+  padding-top: 68px;
+}
+
+.earthen-problem__inner::before,
+.earthen-editorial__inner::before {
+  grid-column: 2;
+  grid-row: 1;
+  width: 1px;
+  height: 100%;
+  background: var(--earthen-line);
+  content: "";
+}
+
+.earthen-problem__copy {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 28px;
+}
+
+.earthen-problem__copy p {
+  width: 336px;
+  max-width: 100%;
+  margin: 28px 0 0;
+  font: 400 26px/33px Georgia, "Times New Roman", serif;
+  letter-spacing: -0.35px;
+}
+
+.earthen-problem__media {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
+  height: 634px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.earthen-problem__media img,
+.earthen-editorial__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.earthen-platform {
+  height: 278px;
+  padding: 68px 41px 0;
+}
+
+.earthen-platform h2 {
+  width: min(1207px, 100%);
+  margin: 20px 0 0;
+  font: 400 34px/44px Georgia, "Times New Roman", serif;
+  letter-spacing: -0.4px;
+}
+
+.earthen-journey {
+  height: 430px;
+  padding: 22px 41px 0;
+}
+
+.earthen-journey__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: 326px;
+  margin-top: 17px;
+  border-top: 1px solid var(--earthen-line);
+  border-left: 1px solid var(--earthen-line);
+}
+
+.earthen-journey__item {
+  display: flex;
+  min-width: 0;
+  padding: 19px 40px 22px;
+  flex-direction: column;
+  border-right: 1px solid var(--earthen-line);
+  border-bottom: 1px solid var(--earthen-line);
+}
+
+.earthen-journey__item > div {
+  margin-top: auto;
+}
+
+.earthen-journey__stage {
+  margin: 0 0 3px;
+  font: 400 17px/22px Georgia, "Times New Roman", serif;
+}
+
+.earthen-journey__item h3 {
+  margin: 0;
+  font: 400 26px/31px Georgia, "Times New Roman", serif;
+  letter-spacing: -0.25px;
+}
+
+.earthen-journey__body {
+  width: 342px;
+  max-width: 100%;
+  margin: 22px 0 0;
+  font: 400 15px/20px Georgia, "Times New Roman", serif;
+}
+
+.earthen-editorial {
+  height: 1131px;
+}
+
+.earthen-editorial__inner {
+  height: 1083px;
+}
+
+.earthen-editorial__inner > h2 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.earthen-editorial__media {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
+  height: 1015px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.earthen-applications {
+  height: 622px;
+  padding: 68px 41px 0;
+}
+
+.earthen-applications__grid {
+  display: grid;
+  grid-template-columns: 439fr 456fr 445fr;
+  gap: 9px;
+  height: 405px;
+  margin-top: 39px;
+}
+
+.earthen-applications__grid figure {
+  min-width: 0;
+  height: 405px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.earthen-applications__grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.earthen-identity {
+  height: 431px;
+  padding: 32px 41px 0;
+}
+
+.earthen-identity__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 339.5fr 546fr 472.5fr;
+  height: 360px;
+  overflow: hidden;
+  border-top: 1px solid var(--earthen-line);
+  border-left: 1px solid var(--earthen-line);
+}
+
+.earthen-identity__grid > h2 {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 20px;
+}
+
+.earthen-identity__mark,
+.earthen-identity__colors,
+.earthen-identity__type {
+  min-width: 0;
+  border-right: 1px solid var(--earthen-line);
+  border-bottom: 1px solid var(--earthen-line);
+}
+
+.earthen-identity__mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earthen-identity__mark img {
+  width: 204px;
+  height: 178px;
+  object-fit: contain;
+}
+
+.earthen-identity__mark > p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.earthen-identity__colors {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 78px 20px 20px;
+}
+
+.earthen-identity__colors > div {
+  width: 88px;
+}
+
+.earthen-identity__colors span {
+  display: block;
+  width: 88px;
+  height: 95px;
+}
+
+.earthen-identity__colors p,
+.earthen-identity__type > p:not(.earthen-identity__sample) {
+  margin: 14px 0 0;
+  font: 500 8px/11px "Karla", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+
+.earthen-identity__colors strong,
+.earthen-identity__type strong {
+  font-weight: 600;
+}
+
+.earthen-identity__type {
+  padding: 63px 24px 20px 47px;
+}
+
+.earthen-identity__sample {
+  margin: 0;
+  font: 400 92px/96px Georgia, "Times New Roman", serif;
+  letter-spacing: -5px;
+}
+
+.earthen-identity__type > p:nth-child(2) {
+  margin-top: 2px !important;
+}
+
+.earthen-identity__type > p:last-child {
+  margin-top: 28px;
+  line-height: 13px;
+}
+
+.earthen-page .project-footer {
+  position: relative;
+  height: 366px;
+  border-top: 1px solid var(--earthen-line);
+}
+
+.earthen-page .project-footer > .project-kicker {
+  position: absolute;
+  top: 68px;
+  left: 41px;
+}
+
+.earthen-page .project-footer__statement {
+  position: absolute;
+  top: 101px;
+  left: 41px;
+  width: min(1305px, calc(100% - 82px));
+  min-height: 142px;
+  margin: 0;
+  font: 400 34px/44px Georgia, "Times New Roman", serif;
+  letter-spacing: -0.4px;
+}
+
+.earthen-page .project-footer__next {
+  position: absolute;
+  top: 263px;
+  left: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  width: calc(100% - 82px);
+  height: 53px;
+  padding-top: 20px;
+  border-top: 1px solid var(--earthen-line);
+  font: 500 11px/13px "Karla", "Helvetica Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.earthen-page .project-footer__next span:last-child {
+  margin-top: -1px;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 1100px) {
+  .earthen-hero,
+  .earthen-problem,
+  .earthen-platform,
+  .earthen-journey,
+  .earthen-editorial,
+  .earthen-applications,
+  .earthen-identity,
+  .earthen-page .project-footer {
+    height: auto;
+  }
+
+  .earthen-hero {
+    display: flex;
+    padding: 48px 24px 64px;
+    flex-direction: column;
+  }
+
+  .earthen-hero__number,
+  .earthen-hero h1,
+  .earthen-hero__meta,
+  .earthen-hero__media,
+  .earthen-hero__description {
+    position: static;
+    width: 100%;
+  }
+
+  .earthen-hero h1 {
+    margin-top: 24px;
+  }
+
+  .earthen-hero__meta {
+    margin-top: 20px;
+  }
+
+  .earthen-hero__media {
+    height: auto;
+    aspect-ratio: 1358 / 560;
+    margin-top: 24px;
+  }
+
+
+
+  .earthen-hero__description {
+    max-width: 843px;
+    margin-top: 28px;
+  }
+
+  .earthen-problem,
+  .earthen-editorial {
+    padding: 56px 24px 64px;
+  }
+
+  .earthen-problem__inner,
+  .earthen-editorial__inner {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.6fr) minmax(0, 1.4fr);
+    gap: 40px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .earthen-problem__inner::before,
+  .earthen-editorial__inner::before {
+    display: none;
+  }
+
+  .earthen-problem__copy,
+  .earthen-editorial__inner > h2,
+  .earthen-problem__media,
+  .earthen-editorial__media {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .earthen-problem__copy {
+    padding: 0;
+  }
+
+  .earthen-problem__copy p {
+    width: 100%;
+    font-size: 23px;
+    line-height: 30px;
+  }
+
+  .earthen-problem__media,
+  .earthen-editorial__media {
+    height: auto;
+  }
+
+  .earthen-problem__media img,
+  .earthen-editorial__media img {
+    height: auto;
+  }
+
+  .earthen-platform {
+    padding: 56px 24px 64px;
+  }
+
+  .earthen-journey {
+    padding: 32px 24px 64px;
+  }
+
+  .earthen-journey__grid {
+    height: auto;
+  }
+
+  .earthen-journey__item {
+    min-height: 326px;
+  }
+
+  .earthen-applications {
+    padding: 56px 24px 64px;
+  }
+
+  .earthen-applications__grid {
+    height: auto;
+  }
+
+  .earthen-applications__grid figure {
+    height: auto;
+  }
+
+  .earthen-applications__grid img {
+    height: auto;
+  }
+
+  .earthen-identity {
+    padding: 32px 0 64px;
+  }
+
+  .earthen-identity__grid {
+    width: 960px;
+    margin-left: 24px;
+  }
+
+  .earthen-page .project-footer {
+    min-height: 366px;
+  }
+}
+
+@media (max-width: 700px) {
+  .earthen-page .project-nav {
+    padding-inline: 20px;
+  }
+
+  .earthen-page .project-nav nav {
+    gap: 16px;
+    font-size: 10px;
+    letter-spacing: 0.7px;
+  }
+
+  .earthen-hero h1 {
+    font-size: 52px;
+    line-height: 56px;
+  }
+
+  .earthen-hero__description {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .earthen-problem__inner,
+  .earthen-editorial__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .earthen-problem__media,
+  .earthen-editorial__media {
+    margin-top: 14px;
+  }
+
+  .earthen-platform h2 {
+    font-size: 29px;
+    line-height: 38px;
+  }
+
+  .earthen-journey__grid,
+  .earthen-applications__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .earthen-journey__item {
+    min-height: 300px;
+  }
+
+  .earthen-applications__grid {
+    gap: 12px;
+  }
+
+  .earthen-page .project-footer > .project-kicker,
+  .earthen-page .project-footer__statement,
+  .earthen-page .project-footer__next {
+    left: 24px;
+    width: calc(100% - 48px);
+  }
+
+  .earthen-page .project-footer__statement {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .earthen-page * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
