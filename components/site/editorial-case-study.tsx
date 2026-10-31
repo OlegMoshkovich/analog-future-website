@@ -22,8 +22,7 @@ type EditorialCaseStudyProps = {
   scope: string[];
   outcome: string;
   outcomeEyebrow?: string;
-  nextTitle: string;
-  nextHref: string;
+  currentHref: string;
 };
 
 export function EditorialCaseStudy(props: EditorialCaseStudyProps) {
@@ -76,7 +75,7 @@ export function EditorialCaseStudy(props: EditorialCaseStudyProps) {
         <div className="ec-section__heading"><p className="ec-kicker">Scope</p><h2>Strategy, expression, and experience—designed as one system.</h2></div>
         <div className="ec-scope__grid">{props.scope.map((item,i)=><div key={item}><span className="ec-kicker">0{i+1}</span><p>{item}</p></div>)}</div>
       </section>
-      <CaseStudyFooter eyebrow={props.outcomeEyebrow} statement={props.outcome} nextTitle={props.nextTitle} nextHref={props.nextHref} />
+      <CaseStudyFooter eyebrow={props.outcomeEyebrow} statement={props.outcome} currentHref={props.currentHref} />
     </main>
   );
 }
