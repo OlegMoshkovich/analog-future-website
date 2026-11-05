@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { SiteMotion } from "@/components/site/site-motion";
 import "./globals.css";
+import "./motion.css";
 
 export const metadata: Metadata = {
-  title: "Analog Future — Design & Product Studio",
+  title: "Analog Future | Design & Product Studio",
   description:
     "Analog Future is an independent studio creating brand systems, digital products, and visual communication.",
   icons: {
@@ -18,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}<SiteMotion /></body>
     </html>
   );
 }

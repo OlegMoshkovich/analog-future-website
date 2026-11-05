@@ -1,5 +1,5 @@
 /** Historical estimates from Table 1, pp. 10–11 of the October 24, 2023 #WeCount report. */
-export const REPORT_URL = "https://societyfp.org/wp-content/uploads/2023/10/WeCountReport_10.16.23.pdf";
+export const REPORT_URL = "https://societyfp.org/wp-content/uploads/2023/10/wecount-report-4-june-2023-data.pdf";
 export const REPORTS_URL = "https://societyfp.org/research/wecount/wecount-reports/";
 export const PERIOD = "April 2022–June 2023";
 export type Count = number | "<10";

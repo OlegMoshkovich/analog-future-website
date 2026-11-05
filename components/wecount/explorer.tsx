@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
 import { Slider } from "@/components/ui/slider";
@@ -24,7 +24,7 @@ function percentage(series: StateSeries, month: number) {
 function Trend({ series, month }: { series: StateSeries; month: number }) {
   const values = series.values.map((value) => value === "<10" ? null : value);
   const max = Math.max(...values.filter((value): value is number => value !== null), 1);
-  const xy = (i: number, value: number) => [12 + i * 26, 68 - value / max * 52];
+  const xy = (i: number, value: number) => [12 + i * (496 / 14), 86 - value / max * 62];
   let path = "";
   let previousWasExact = false;
   values.forEach((value, i) => {
@@ -34,11 +34,11 @@ function Trend({ series, month }: { series: StateSeries; month: number }) {
     previousWasExact = true;
   });
   return (
-    <svg className="wc-trend" viewBox="0 0 388 85" role="img" aria-label={`${series.name}: monthly estimated abortions from April 2022 to June 2023. Hollow marks represent counts under 10.`}>
-      <line x1="12" x2="376" y1="68" y2="68" className="wc-trend-baseline" />
-      <line x1={xy(month, 0)[0]} x2={xy(month, 0)[0]} y1="8" y2="74" className="wc-trend-selected" />
+    <svg className="wc-trend" viewBox="0 0 520 110" role="img" aria-label={`${series.name}: monthly estimated abortions from April 2022 to June 2023. Hollow marks represent counts under 10.`}>
+      <line x1="12" x2="508" y1="86" y2="86" className="wc-trend-baseline" />
+      <line x1={xy(month, 0)[0]} x2={xy(month, 0)[0]} y1="12" y2="92" className="wc-trend-selected" />
       <path d={path} className="wc-trend-line" />
-      {values.map((value, i) => <circle key={i} cx={xy(i, value ?? 0)[0]} cy={xy(i, value ?? 0)[1]} r={i === month ? 4.5 : 2.5} className={value === null ? "wc-trend-suppressed" : "wc-trend-dot"}><title>{MONTHS[i].label}: {formatCount(series.values[i])}</title></circle>)}
+      {values.map((value, i) => <circle key={i} cx={xy(i, value ?? 0)[0]} cy={xy(i, value ?? 0)[1]} r={i === month ? 4.5 : 2.5} className={value === null ? "wc-trend-suppressed" : "wc-trend-dot"}><title>{`${MONTHS[i].label}: ${formatCount(series.values[i])}`}</title></circle>)}
     </svg>
   );
 }
@@ -115,7 +115,7 @@ export default function WeCountExplorer() {
           </div>
         </div>
       </div>
-      <footer className="wc-data-footer"><div><p>Reconstructed from historical #WeCount estimates, April 2022–June 2023.</p><p>Counts are rounded and include imputed estimates. Self-managed abortions are excluded. Map comparisons use April 2022; the report’s pre/post summaries use the April–May average.</p></div><a href={REPORT_URL} target="_blank" rel="noreferrer">Source report <ArrowUpRight size={16} /></a><a href={REPORTS_URL} target="_blank" rel="noreferrer">All reports <ArrowUpRight size={16} /></a></footer>
+      <footer className="wc-data-footer"><div><p>Reconstructed from historical #WeCount estimates, April 2022–June 2023.</p><p>Counts are rounded and include imputed estimates. Self-managed abortions are excluded. Map comparisons use April 2022; the report’s pre/post summaries use the April–May average.</p></div><a href={REPORT_URL} target="_blank" rel="noreferrer">Source report <span aria-hidden="true">↗</span></a><a href={REPORTS_URL} target="_blank" rel="noreferrer">All reports <span aria-hidden="true">↗</span></a></footer>
     </section>
   );
 }

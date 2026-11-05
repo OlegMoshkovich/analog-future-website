@@ -1,0 +1,80 @@
+@media (prefers-reduced-motion: no-preference) {
+  [data-af-reveal] {
+    transition:
+      opacity 1400ms ease,
+      translate 1600ms cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--af-reveal-delay, 0ms);
+  }
+
+  [data-af-reveal="pending"] {
+    opacity: 0;
+    translate: 0 24px;
+  }
+
+  [data-af-reveal="pending"]:focus-within {
+    opacity: 1;
+    translate: none;
+    transition-delay: 0ms;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .af-header nav a,
+  .project-nav nav a {
+    position: relative;
+  }
+
+  .af-header nav a::after,
+  .project-nav nav a::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -6px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
+    pointer-events: none;
+  }
+
+  .af-header nav a:is(:hover, :focus-visible)::after,
+  .project-nav nav a:is(:hover, :focus-visible)::after {
+    transform: scaleX(1);
+  }
+
+  .af-wordmark__future {
+    transition: transform 400ms cubic-bezier(.22, 1, .36, 1);
+    transform-origin: 20% 70%;
+  }
+
+  .af-wordmark:is(:hover, :focus-visible) .af-wordmark__future {
+    transform: translateX(2px) rotate(-3deg);
+  }
+
+  .af-header__contact span,
+  .af-footer__cta > span:last-child > span,
+  .studio-contact__main > a span {
+    display: inline-block;
+    transition: translate 300ms cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .af-header__contact:is(:hover, :focus-visible) span,
+  .af-footer__cta:is(:hover, :focus-visible) > span:last-child > span,
+  .studio-contact__main > a:is(:hover, :focus-visible) span {
+    translate: 3px -3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .af-feature-project__artwork img,
+  .af-feature-project__artwork:hover img,
+  .af-project-card__artwork img,
+  .af-project-card__link:hover .af-project-card__artwork img {
+    transition: none;
+    transform: none;
+  }
+}
