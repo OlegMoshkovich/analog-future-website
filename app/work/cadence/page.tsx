@@ -1,10 +1,11 @@
+import { IdentitySystem } from "@/components/site/identity-system";
 import type { Metadata } from "next";
 import { CaseStudyFooter } from "@/components/site/case-study-footer";
 import { ProjectNavigation } from "@/components/site/project-navigation";
 import "./cadence.css";
 
 export const metadata: Metadata = {
-  title: "Cadence — Analog Future",
+  title: "Cadence | Analog Future",
   description: "A reflective record for remembering everyday life and seeing its patterns over time.",
 };
 
@@ -51,8 +52,8 @@ export default function CadencePage() {
             <image href="/assets/projects/cadence-figma/wordmark.svg" x="491" y="205" width="277" height="64.6" aria-hidden="true" />
           </svg>
         </figure>
-        <p className="cadence-hero__description">
-          We built Cadence because we wanted to remember our lives better—to return to a random Tuesday and see what we did. Not only work, but the things that make up a life: how we felt, what we read or watched, what we spent, and the thoughts we wrote down. Over time, these details reveal the patterns of our lives.
+        <p className="cadence-hero__description af-body">
+          We built Cadence because we wanted to remember our lives better, so we could return to a random Tuesday and see what we did. Not only work, but the things that make up a life: how we felt, what we read or watched, what we spent, and the thoughts we wrote down. Over time, these details reveal the patterns of our lives.
         </p>
       </section>
 
@@ -60,14 +61,14 @@ export default function CadencePage() {
         <div className="cadence-challenge__grid">
           <div className="cadence-context cadence-challenge__context">
             <p className="cadence-micro">The challenge</p>
-            <h2 id="cadence-challenge-title">Modern life moves fast.</h2>
-            <p>Work, wellbeing, spending, and personal life live across different tools—making the whole picture hard to see.</p>
+            <h2 id="cadence-challenge-title">Life moves fast.</h2>
+            <p className="af-body">Work, wellbeing, spending, and personal life live across different tools, making the whole picture hard to see.</p>
           </div>
           {challenges.map(([number, title, body]) => (
             <article className="cadence-challenge__item" key={title}>
               <p className="cadence-micro">{number}</p>
               <h3>{title}</h3>
-              <p>{body}</p>
+              <p className="af-body">{body}</p>
             </article>
           ))}
         </div>
@@ -95,14 +96,14 @@ export default function CadencePage() {
           <div className="cadence-context cadence-journey__context">
             <p className="cadence-micro">User journey</p>
             <h2 id="cadence-journey-title">From daily moments to a clearer perspective.</h2>
-            <p>A simple loop turns quick entries into useful reflection.</p>
+            <p className="af-body">A simple loop turns quick entries into useful reflection.</p>
           </div>
           {journey.map(([number, title, body]) => (
             <article className="cadence-journey__item" key={title}>
               <span className="cadence-journey__marker" aria-hidden="true" />
               <p className="cadence-micro">{number}</p>
               <h3>{title}</h3>
-              <p>{body}</p>
+              <p className="af-body">{body}</p>
             </article>
           ))}
         </div>
@@ -120,15 +121,8 @@ export default function CadencePage() {
       </section>
 
       <section className="cadence-identity" aria-labelledby="cadence-identity-title">
-        <div className="cadence-identity__viewport">
-          <img
-            src="/assets/projects/cadence-figma/identity@2x.png"
-            width="2716"
-            height="734"
-            alt="The Cadence brand mark, core colors, typography, and category icons."
-          />
-          <h2 className="cadence-micro" id="cadence-identity-title">Identity system</h2>
-        </div>
+        <h2 className="cadence-micro" id="cadence-identity-title">Identity system</h2>
+        <IdentitySystem project="cadence" />
       </section>
 
       <section className="cadence-scope" aria-labelledby="cadence-scope-title">
@@ -136,7 +130,7 @@ export default function CadencePage() {
           <div className="cadence-context cadence-scope__context">
             <p className="cadence-micro">Scope</p>
             <h2 id="cadence-scope-title">A complete end-to-end partnership.</h2>
-            <p>Strategy, brand, product, and development—from idea to launch.</p>
+            <p className="af-body">Strategy, brand, product, and development, from idea to launch.</p>
           </div>
           {scope.map((item, index) => (
             <article className="cadence-scope__item" key={item}>

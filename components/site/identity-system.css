@@ -1,0 +1,16 @@
+.identity-system{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:transparent;border-top:1px solid var(--af-line);border-left:1px solid var(--af-line)}
+.identity-system__cell{min-width:0;min-height:360px;padding:32px 24px;display:flex;flex-direction:column;border-right:1px solid var(--af-line);border-bottom:1px solid var(--af-line);background:transparent}
+.identity-artwork{display:block;max-width:100%;overflow:hidden}
+.identity-system__mark .identity-artwork{width:150px;height:180px;margin:32px auto auto}
+.identity-system__detail .identity-artwork{width:230px;height:180px;margin:16px auto auto}
+.identity-system__cell>.project-kicker:last-child{margin-top:30px}
+.identity-system__palette{flex-direction:row;justify-content:center;align-items:flex-start;gap:20px;padding-top:64px}
+.identity-system__palette>div{flex:1;min-width:0;max-width:120px}
+.identity-system__palette span{display:block;width:100%;aspect-ratio: .82}
+.identity-system__palette p,.identity-system__type>p:not(.project-kicker){margin:16px 0 0;font:400 13px/1.6 "Karla",sans-serif;overflow-wrap:anywhere}
+.identity-system__type .identity-artwork{height:115px;width:175px;margin:8px 0 24px}
+.identity-system__type>p:last-child{font-size:11px;line-height:1.7;margin-top:24px}
+@media(max-width:1000px){.identity-system{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.identity-system{grid-template-columns:1fr}.identity-system__cell{min-height:330px}}
+
+.coolbuilding-page .identity-system__type .identity-artwork{width:105px;height:69px;}

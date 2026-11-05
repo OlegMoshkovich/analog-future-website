@@ -1,5 +1,5 @@
 .earthen-page {
-  --earthen-bg: #292a27;
+  --earthen-bg: var(--af-charcoal);
   --earthen-fg: #ffffff;
   --earthen-line: rgba(255, 255, 255, 0.22);
   width: 100%;
@@ -599,3 +599,7 @@
     transition: none !important;
   }
 }
+
+.earthen-page .earthen-identity{height:auto;padding-bottom:48px;}
+.earthen-identity>h2{position:static;margin:0 0 24px;}
+@media(max-width:1080px){.earthen-identity>h2{margin-left:24px}}

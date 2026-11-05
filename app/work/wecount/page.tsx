@@ -6,7 +6,7 @@ import "../case-study-v2.css";
 import "./wecount.css";
 
 export const metadata: Metadata = {
-  title: "#WeCount — Analog Future",
+  title: "#WeCount | Analog Future",
   description: "An interactive reconstruction of Andrea Lausevic’s #WeCount data visualization, using published historical estimates from the Society of Family Planning.",
 };
 
@@ -24,7 +24,7 @@ export default function WeCountPage() {
             <h1 id="wc-project-title">#WeCount</h1>
             <p className="wc-project-subtitle">Tracking abortion access after Dobbs.</p>
           </div>
-          <p className="wc-project-description">#WeCount is a public health research initiative tracking monthly, state-by-state abortion volumes across the United States. This interactive view makes the post-Dobbs data easier to explore—showing how access shifted over time and from state to state.</p>
+          <p className="wc-project-description af-body">#WeCount is a public health research initiative tracking monthly, state-by-state abortion volumes across the United States. This interactive view makes the post-Dobbs data easier to explore, showing how access shifted over time and from state to state.</p>
         </div>
       </section>
       <section className="wc-explorer-section" aria-label="Interactive #WeCount data explorer">
@@ -32,7 +32,7 @@ export default function WeCountPage() {
       </section>
       <CaseStudyFooter
         eyebrow="The solution"
-        statement="We transformed spreadsheets of monthly estimates into an interactive national view—making shifts in abortion access visible across time, geography, and legal context."
+        statement="We transformed spreadsheets of monthly estimates into an interactive national view, making shifts in abortion access visible across time, geography, and legal context."
         currentHref="/work/wecount"
       />
     </main>

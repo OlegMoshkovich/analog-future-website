@@ -1,6 +1,7 @@
 .af-home--panels {
   --af-tab-height: calc(2.625rem + env(safe-area-inset-bottom, 0px));
   --af-tabs-width: min(calc(100% - 2 * var(--af-gutter)), 52rem);
+  --af-tabs-left: max(var(--af-gutter), calc((100% - var(--af-content)) / 2 + var(--af-gutter)));
   --af-tab-gap: .375rem;
   --af-tab-width: calc((var(--af-tabs-width) - 3 * var(--af-tab-gap)) / 4);
   --af-card-clearance: calc(var(--af-tab-height) + 1.5rem);
@@ -61,7 +62,7 @@
   position: absolute;
   z-index: 2;
   top: calc(-1 * var(--af-tab-height));
-  left: calc(var(--af-tab-index) * (var(--af-tab-width) + var(--af-tab-gap)));
+  left: calc(var(--af-tabs-left) + var(--af-tab-index) * (var(--af-tab-width) + var(--af-tab-gap)));
   display: flex;
   min-width: 0;
   width: var(--af-tab-width);
@@ -116,6 +117,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   align-items: start;
+  align-content: center;
   column-gap: clamp(3rem, 5vw, 5rem);
   padding-block: clamp(3rem, 7svh, 4.25rem) calc(var(--af-tab-height) + 3rem);
 }
@@ -205,6 +207,7 @@
   grid-template-columns: 13.4rem minmax(0, 1fr);
   min-height: max(calc(100svh - var(--af-tab-height)), 36.125rem);
   row-gap: 1.25rem;
+  align-content: center;
   padding-bottom: calc(max(2.75rem, var(--af-card-clearance)) + 3rem);
 }
 
@@ -263,6 +266,8 @@
 
 .af-home--panels .af-approach__inner {
   min-height: max(calc(100svh - var(--af-tab-height)), 55.965rem);
+  align-content: center;
+  grid-template-rows: auto auto;
   padding-top: 5rem;
 }
 
@@ -312,6 +317,7 @@
 
 @media (max-width: 832px) {
   .af-home--panels {
+    --af-tabs-left: .5rem;
     --af-tab-height: calc(2.75rem + env(safe-area-inset-bottom, 0px));
     --af-tabs-width: calc(100% - 1rem);
     --af-tab-gap: .25rem;
@@ -382,4 +388,32 @@
 .af-home--panels .af-footer__cta > span:last-child,
 .af-home--panels .af-footer__cta em {
   color: var(--af-lavender-light);
+}
+
+/* Keep the artwork crop inside the photograph instead of on its edge. */
+.af-home--panels .af-feature-project__artwork img { transform: scale(1.18); }
+.af-home--panels .af-feature-project__artwork:hover img { transform: scale(1.2); }
+
+/* Viewport height may add space around the group, never between its rows. */
+.af-home--panels .af-process-grid {
+  align-self: start;
+  margin-top: 4rem;
+}
+
+@media (max-width: 576px) {
+  .af-home--panels .af-hero__copy { display: contents; }
+  .af-home--panels .af-hero__inner { row-gap: 1.5rem; }
+  .af-home--panels .af-hero__context { grid-row: 1; }
+  .af-home--panels .af-hero h1 { grid-row: 2; margin-top: 1rem; }
+  .af-home--panels .af-hero__drawing {
+    grid-row: 3;
+    justify-self: center;
+    width: min(100%, 22rem);
+    margin: 0;
+  }
+  .af-home--panels .af-hero__services {
+    grid-row: 4;
+    margin-top: 0;
+    font-size: 11px;
+  }
 }

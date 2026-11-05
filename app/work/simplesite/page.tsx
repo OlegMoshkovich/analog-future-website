@@ -5,7 +5,7 @@ import "../case-study-v2.css";
 import "./simplesite.css";
 
 export const metadata: Metadata = {
-  title: "SimpleSite — Analog Future",
+  title: "SimpleSite | Analog Future",
   description: "A field documentation system built for large, complex construction projects.",
 };
 
@@ -82,7 +82,7 @@ export default function SimpleSitePage() {
             </g>
           </svg>
         </figure>
-        <p className="ss-hero__intro">
+        <p className="ss-hero__intro af-body">
           SimpleSite is a field documentation system built for large, complex construction projects. It turns site
           photographs, coordinates, tags, and notes into a structured record, captured in the field and searchable
           with AI.
@@ -93,7 +93,6 @@ export default function SimpleSitePage() {
         <p className="ss-mono">The product system</p>
         <h2 id="product-system-title">Documentation<br />made easy</h2>
         <div className="ss-product__media">
-          <p className="ss-mono">01 / Mobile capture</p>
           <img
             src={`${assetRoot}/simplesite-product-flow@2x.png`}
             alt="Four SimpleSite mobile screens showing photo capture, details, saving, and record search."
@@ -115,10 +114,10 @@ export default function SimpleSitePage() {
       <section className="ss-feature ss-shell ss-divider" aria-labelledby="field-proof-title">
         <div className="ss-feature__copy">
           <p className="ss-mono">Field proof</p>
-          <h2 id="field-proof-title">Built on a live industrial construction project.</h2>
-          <p>
+          <h2 id="field-proof-title">Implemented on a real industrial construction project.</h2>
+          <p className="af-body">
             At Heizkraftwerk Süd in Munich, SimpleSite was developed further around the realities of industrial
-            construction—making progress visible to both client and contractor.
+            construction, making progress visible to both client and contractor.
           </p>
         </div>
         <figure className="ss-feature__visual">
@@ -136,14 +135,14 @@ export default function SimpleSitePage() {
         <div className="ss-challenge__intro">
           <p className="ss-mono">Why we built it</p>
           <h2 id="challenge-title">Captured doesn’t mean organized.</h2>
-          <p>When documenting takes too much effort, information gets scattered—and becomes difficult to find.</p>
+          <p className="af-body">When documenting takes too much effort, information gets scattered and becomes difficult to find.</p>
         </div>
         <div className="ss-challenge__cards">
           {friction.map(([number, title, body]) => (
             <article key={title}>
               <p className="ss-card__number">{number}</p>
               <h3>{title}</h3>
-              <p>{body}</p>
+              <p className="af-body">{body}</p>
             </article>
           ))}
         </div>
@@ -153,7 +152,7 @@ export default function SimpleSitePage() {
         <div className="ss-feature__copy">
           <p className="ss-mono">Organized by date</p>
           <h2 id="calendar-title">Everyday<br />in order.</h2>
-          <p>
+          <p className="af-body">
             Browse by date to see that day’s photos, notes, and tags in one place. Each record keeps its context,
             making it easy to revisit what happened and find the details you need.
           </p>
@@ -184,15 +183,14 @@ export default function SimpleSitePage() {
         </div>
       </section>
 
-      <section className="ss-metrics ss-shell" aria-labelledby="snapshot-title">
+      <section className="ss-metrics ss-shell" aria-label="Product snapshot">
         <p className="ss-mono">Product snapshot / 10 Dec 2025</p>
-        <h2 id="snapshot-title">A working product, not a concept.</h2>
         <div className="ss-metrics__grid">
           {metrics.map(([value, label, note]) => (
             <article key={label}>
               <strong>{value}</strong>
               <p className="ss-mono">{label}</p>
-              <p>{note}</p>
+              <p className="af-body">{note}</p>
             </article>
           ))}
         </div>
@@ -202,7 +200,7 @@ export default function SimpleSitePage() {
         <div className="ss-scope__intro">
           <p className="ss-mono">Our scope</p>
           <h2 id="scope-title">From field observation to live product.</h2>
-          <p>We owned the problem, product, interface and build—from the first idea through implementation with AFRY.</p>
+          <p className="af-body">We owned the problem, product, interface and build, from the first idea through implementation with AFRY.</p>
         </div>
         <ol className="ss-scope__list">
           {scope.map((item, index) => (

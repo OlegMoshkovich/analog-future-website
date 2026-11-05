@@ -1,6 +1,6 @@
 {
-  "sites_version": 69,
-  "source_commit": "7bd07ef25d15b8a461dc0918de827013b045ed75",
+  "sites_version": 75,
+  "source_commit": "516eac381edd38c68783e37369b77574b44b0642",
   "files": [
     {
       "mode": "100644",
@@ -34,19 +34,19 @@
     },
     {
       "mode": "100644",
-      "sha": "d99c4113a9bba8808766bcaac6600eb7a3f3d104",
+      "sha": "cdb46bbb17cb56af55acc4575aedd61f7b9b0bb8",
       "path": "app/globals.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "13d118172cb32129900a0e08ec80bc886d1e6025",
+      "sha": "f894009b03484a121ceb8ce5daac26861767d7b4",
       "path": "app/home-panels.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "97898579dd248def52012a46499ec66728fb96a4",
+      "sha": "692605d3cdec636033584d440b0ec1596d83a1ff",
       "path": "app/layout.tsx",
       "type": "blob"
     },
@@ -58,13 +58,13 @@
     },
     {
       "mode": "100644",
-      "sha": "18adb48d96ae90c552cffbd55fd4fdfc48c4e3c5",
+      "sha": "8440f7ac222381682237097e00c7f9d76035052c",
       "path": "app/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "11e5a675253b8184829b9653e623e350913ce7bb",
+      "sha": "18bebbf4d01fdad338abfce1dcc729d17ee5ea7e",
       "path": "app/studio/page.tsx",
       "type": "blob"
     },
@@ -82,25 +82,25 @@
     },
     {
       "mode": "100644",
-      "sha": "e44931fecbe1e107d24388b1770d7db6526b2cc4",
+      "sha": "74840cee81b922b89cfd15390717f53f3252f31b",
       "path": "app/studio/studio.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "dd8bd0b2c301c85905947436bbc2d12b47fa11e7",
+      "sha": "b5195c73c517cac615e8d21e56fd79e0294cd583",
       "path": "app/work/cadence/cadence.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "8a0f76cc95df1af1f09f0ca37476177f2db1b597",
+      "sha": "4f2ea22ff28d6173a9e34bd22b340c4371209d25",
       "path": "app/work/cadence/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "227da3cf36c077dcc7094bca3470e55256e66d55",
+      "sha": "df1911bd1e50be61597a0e3be00aa8aa8b10c970",
       "path": "app/work/case-study-v2.css",
       "type": "blob"
     },
@@ -112,37 +112,37 @@
     },
     {
       "mode": "100644",
-      "sha": "e5ef3a3db799e833fc23b80c63176fe9db47ca62",
+      "sha": "06f49d6dd19f0dc909e96748f9d0769329db1a15",
       "path": "app/work/coolbuilding/coolbuilding.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "aadad8be883d02f6519cfc99a295d78437b6c487",
+      "sha": "e4fba4e6b18c790e4b645fe12516643ba143a02e",
       "path": "app/work/coolbuilding/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "ada152e560c739445adee47daec30767cbaefbec",
+      "sha": "1d29e2f7d419c2347d1435154cb9e2a2edc2074f",
       "path": "app/work/cubed/cubed.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "d441254fce77359d88ab650512e65dfccdd22f21",
+      "sha": "e095e3a663e56068200ddd31442d8b609d852030",
       "path": "app/work/cubed/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "2b69ca5dcd07712880844745b1f592001dfaba20",
+      "sha": "1d3cfb2d65e3295ed55459694ed1943050ba38ec",
       "path": "app/work/earthen/earthen.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "8ba108a02d248ec43756d909286dc820855c9594",
+      "sha": "c0f9980f02df51de511994fac52f1622a791211a",
       "path": "app/work/earthen/page.tsx",
       "type": "blob"
     },
@@ -154,37 +154,37 @@
     },
     {
       "mode": "100644",
-      "sha": "883ec3c8f69e066220593a2a25b76a21bdc66dfb",
+      "sha": "4f4209ea071c54f3b4ec80f0e064e72c0978729c",
       "path": "app/work/simplesite/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "d1c37632362ca7ebf3a14f2202bff384b4fbc82a",
+      "sha": "ebcb6b888e4eb18ea73d70cca71b20154f8bea4d",
       "path": "app/work/simplesite/simplesite.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "8454a9d81977ac3e8cfe10193c6b93daa163f4e7",
+      "sha": "74206c2e81763146683901cfcf73db9590de1ca1",
       "path": "app/work/valmia/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "c15379fbbfff4d1635745605a46ea4e5256bf60b",
+      "sha": "edb8e0eb304e3ac9f143a61e6f98aa093981b1e4",
       "path": "app/work/valmia/valmia.css",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "2c06cee4ea80d0cd5f2a09e286e3a232c2043b5f",
+      "sha": "fd83798ecc8a4f55b1cde734f7767c27cb2c042a",
       "path": "app/work/wecount/page.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "ed3e8d08329f198cad5dc6cfa6aed137ab05644a",
+      "sha": "7374bbcb581af7b0c4820a71a2d3db5075bb1684",
       "path": "app/work/wecount/wecount.css",
       "type": "blob"
     },
@@ -202,7 +202,7 @@
     },
     {
       "mode": "100644",
-      "sha": "cc74eabfc573e9005db7509c26063b5b853e1e43",
+      "sha": "a3802c45bbae49428828e7b2fc36032b954bbde5",
       "path": "components/site/case-study-footer.css",
       "type": "blob"
     },
@@ -232,13 +232,13 @@
     },
     {
       "mode": "100644",
-      "sha": "632c96b489c024a9d70e1ed3828e90c23372199f",
+      "sha": "caa3d84fd798ce99de09be8420e545705f50797f",
       "path": "components/site/editorial-case-study.tsx",
       "type": "blob"
     },
     {
       "mode": "100644",
-      "sha": "f9b7eaf900088d33c944fd3c59ae40f79ce0cc62",
+      "sha": "f5dd7098bedfbbc7f640d7e9cfbbd8bc2d661419",
       "path": "components/site/expertise-pong.css",
       "type": "blob"
     },
@@ -246,6 +246,18 @@
       "mode": "100644",
       "sha": "185d1d0827bd8305ec87fd6f343d0113855db5e7",
       "path": "components/site/expertise-pong.tsx",
+      "type": "blob"
+    },
+    {
+      "mode": "100644",
+      "sha": "fe3617f95623d077849dbb70aab49dee763e4e1b",
+      "path": "components/site/identity-system.css",
+      "type": "blob"
+    },
+    {
+      "mode": "100644",
+      "sha": "8b24f11439b2aca27c7b14bdcd934dd51e87383b",
+      "path": "components/site/identity-system.tsx",
       "type": "blob"
     },
     {
@@ -268,7 +280,7 @@
     },
     {
       "mode": "100644",
-      "sha": "2306c1b2960c6909f4485fb5ee9bab3ac531a340",
+      "sha": "b5588589116a2e1d5630975fdfc7341e4c7dae64",
       "path": "components/site/project-navigation.tsx",
       "type": "blob"
     },

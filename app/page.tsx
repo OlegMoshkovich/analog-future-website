@@ -158,8 +158,19 @@ export default function Home() {
 
             <article className="af-feature-project">
               <a className="af-feature-project__artwork" href="/work/cadence">
+                <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true" focusable="false">
+                  <defs>
+                    <filter id="home-cadence-matte" colorInterpolationFilters="sRGB">
+                      <feFlood floodColor="#292a27" result="matte" />
+                      <feBlend in="SourceGraphic" in2="matte" mode="difference" result="difference" />
+                      <feColorMatrix in="difference" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  40 40 40 0 0" result="mask" />
+                      <feComposite in="SourceGraphic" in2="mask" operator="in" />
+                    </filter>
+                  </defs>
+                </svg>
                 <img
                   src="/assets/home/cadence-exact.png"
+                  style={{ filter: "url(#home-cadence-matte)" }}
                   alt="Cadence visual system shown as a field of blue lines folding through time."
                   width="836"
                   height="693"
@@ -205,7 +216,7 @@ export default function Home() {
             <p className="af-section-label af-micro">03 / How we work</p>
             <h2 id="af-approach-title">
               We bring design, storytelling, and engineering into one shared
-              process—from shaping the idea to building the finished system.
+              process, from shaping the idea to building the finished system.
             </h2>
             <div className="af-process-grid">
               {process.map((step) => (

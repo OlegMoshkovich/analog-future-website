@@ -1,5 +1,5 @@
 .wc-page {
-  --wc-bg: #292a27;
+  --wc-bg: var(--af-charcoal);
   --wc-paper: #eceae2;
   --wc-ink: #ffffff;
   --wc-map-ink: #171817;
@@ -889,3 +889,6 @@
     transition: none;
   }
 }
+
+.wc-page .wc-project-intro{min-height:0;padding-bottom:24px;}
+.wc-page .wc-explorer-section{padding-top:24px;}

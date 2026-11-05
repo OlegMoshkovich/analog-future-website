@@ -1,3 +1,4 @@
+import { IdentitySystem } from "@/components/site/identity-system";
 import type { Metadata } from "next";
 import { CaseStudyFooter } from "@/components/site/case-study-footer";
 import { ProjectNavigation } from "@/components/site/project-navigation";
@@ -6,7 +7,7 @@ import "../case-study-v2.css";
 import "./coolbuilding.css";
 
 export const metadata: Metadata = {
-  title: "Coolbuilding — Analog Future",
+  title: "Coolbuilding | Analog Future",
   description: "An interactive map for visually exploring remarkable architecture around the world.",
 };
 
@@ -22,7 +23,7 @@ export default function CoolbuildingPage() {
           Product design / Branding · 2026 · Independent project
         </p>
         <CoolbuildingAtlas />
-        <p className="cb-hero__description">
+        <p className="cb-hero__description af-body">
           Born from our love of architectural history, Cool Buildings is an interactive map for visually exploring remarkable buildings and hidden gems around the world.
         </p>
       </section>
@@ -48,14 +49,7 @@ export default function CoolbuildingPage() {
 
       <section className="cb-identity" aria-labelledby="cb-identity-title">
         <h2 className="cb-micro" id="cb-identity-title">Identity system</h2>
-        <img
-          src="/assets/projects/coolbuilding-figma/identity@2x.png"
-          width="2716"
-          height="720"
-          alt="Coolbuilding identity system showing the floor-plan monogram, cobalt and concrete colors, Neue Montreal typography, and twelve-column grid."
-          loading="lazy"
-          decoding="async"
-        />
+        <IdentitySystem project="coolbuilding" />
       </section>
 
       <CaseStudyFooter
