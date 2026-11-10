@@ -348,6 +348,15 @@
   .af-home--panels .af-feature-project__artwork { aspect-ratio: 836 / 600; }
   .af-home--panels .af-feature-project__content { min-height: 26rem; padding: 2rem; }
   .af-home--panels .af-approach__inner { min-height: auto; padding-top: 4rem; }
+
+  /* Without sticky panels each section should size to its content, not the viewport. */
+  .af-home--panels .af-manifesto__inner { min-height: auto; padding-bottom: 3rem; }
+  .af-home--panels > .af-footer,
+  .af-home--panels .af-footer__inner { min-height: auto; }
+
+  /* Project card content had a fixed height designed for the desktop grid alignment.
+     In a single-column continuous scroll it just leaves a blank box below the text. */
+  .af-home--panels .af-project-card__content { height: auto; min-height: 0; }
 }
 
 @media (max-width: 576px) {
