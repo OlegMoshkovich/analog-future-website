@@ -318,26 +318,19 @@
 @media (max-width: 832px) {
   .af-home--panels {
     --af-tabs-left: .5rem;
-    --af-tab-height: calc(2.75rem + env(safe-area-inset-bottom, 0px));
+    --af-tab-height: 0px;
     --af-tabs-width: calc(100% - 1rem);
     --af-tab-gap: .25rem;
   }
 
-  .af-panel__tab {
-    padding-right: .375rem;
-    padding-left: .375rem;
-    font-size: .625rem;
-    letter-spacing: .04em;
-  }
-
-  .af-panel__tab-number { display: none; }
+  .af-panel__tab { display: none; }
 
   .af-home--panels > .af-panel {
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -10px 28px rgba(0, 0, 0, .13);
   }
 
-  .af-home--panels > .af-manifesto { border-top-left-radius: 0; }
+  .af-home--panels > .af-manifesto { border-top-left-radius: 20px; }
 
   .af-home--panels .af-hero__inner {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
