@@ -136,7 +136,10 @@ export default function Home() {
                 engineering and storytelling to create expressive systems that work.
               </p>
               <a className="af-studio-teaser__link" href="/studio">
-                More about the studio <span aria-hidden="true">↗</span>
+                <span>More about the studio</span>
+                <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                  <path d="M1.25 10.75 10.75 1.25M5.1 1.25h5.65V6.9" fill="none" stroke="currentColor" strokeWidth="1.15" />
+                </svg>
               </a>
             </div>
           </div>

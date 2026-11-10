@@ -228,16 +228,30 @@
 }
 
 .af-studio-teaser__link {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: .4em;
   color: var(--af-lavender-light);
   width: fit-content;
   font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .75rem;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1;
   letter-spacing: .08em;
   text-transform: uppercase;
-  text-decoration: underline;
-  text-underline-offset: .3rem;
+  text-decoration: none;
+}
+
+.af-studio-teaser__link > span {
+  padding-bottom: .28em;
+  border-bottom: 1px solid currentColor;
+}
+
+.af-studio-teaser__link svg {
+  width: .9em;
+  height: .9em;
+  margin-bottom: -.05em;
+  flex: none;
 }
 
 .af-studio-teaser__link:is(:hover, :focus-visible) { color: var(--af-lavender-light); }
