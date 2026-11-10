@@ -506,7 +506,7 @@
   .ss-hero { padding-top: 36px; padding-bottom: 54px; }
   .ss-hero h1 { margin-top: 18px; font-size: clamp(48px, 14vw, 64px); line-height: 1; }
   .ss-hero__meta { max-width: 620px; margin-top: 20px; line-height: 18px; }
-  .ss-hero__visual { margin-top: 38px; aspect-ratio: 2; }
+  .ss-hero__visual { margin-top: 38px; margin-left: calc(-1 * var(--ss-gutter)); width: calc(100% + 2 * var(--ss-gutter)); aspect-ratio: 2; }
   .ss-hero__visual img { object-position: center; }
   .ss-hero__intro { width: 100%; margin: 28px 0 0; font-size: 19px; line-height: 28px; }
 
