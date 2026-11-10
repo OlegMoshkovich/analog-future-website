@@ -330,14 +330,12 @@
     letter-spacing: .04em;
   }
 
-  .af-panel__tab-number { display: none; }
+  .af-panel__tab { display: none; }
 
   .af-home--panels > .af-panel {
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -10px 28px rgba(0, 0, 0, .13);
+    border-radius: 0;
+    box-shadow: none;
   }
-
-  .af-home--panels > .af-manifesto { border-top-left-radius: 0; }
 
   .af-home--panels .af-hero__inner {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
