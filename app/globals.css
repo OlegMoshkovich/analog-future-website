@@ -78,6 +78,15 @@ body::after {
   opacity: var(--af-paper-grain-opacity);
 }
 
+/* mix-blend-mode prevents layer isolation on mobile, causing expensive per-frame
+   blending during scroll. Use plain opacity instead on touch devices. */
+@media (hover: none) {
+  body::after {
+    mix-blend-mode: normal;
+    opacity: calc(var(--af-paper-grain-opacity) * 0.7);
+  }
+}
+
 @media print, (forced-colors: active) {
   body::after {
     display: none;

@@ -6,6 +6,7 @@
   --af-tab-width: calc((var(--af-tabs-width) - 3 * var(--af-tab-gap)) / 4);
   --af-card-clearance: calc(var(--af-tab-height) + 1.5rem);
   isolation: isolate;
+  touch-action: pan-y;
 }
 
 .af-home--panels > .af-panel-anchor {
@@ -304,7 +305,6 @@
   .af-home--panels[data-af-panels="ready"] .af-panel__clip { height: 100%; }
 
   .af-home--panels[data-af-panels="ready"] .af-panel__clip > div {
-    transform: translate3d(0, var(--af-panel-content-offset, 0px), 0);
     will-change: transform;
   }
 
