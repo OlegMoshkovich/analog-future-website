@@ -39,6 +39,7 @@ function DotDrawing({ illustration }: { illustration: DotIllustration }) {
     const detailLines = figure.querySelector<SVGPathElement>("[data-dot-details]");
     if (!path || !shading || !pencil || typeof window.IntersectionObserver !== "function") return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const noAutoPlay = window.matchMedia("(hover: none) and (pointer: coarse)");
     const length = path.getTotalLength();
     let frame = 0;
     let elapsed = 0;
@@ -84,6 +85,12 @@ function DotDrawing({ illustration }: { illustration: DotIllustration }) {
       if (preference.matches) {
         paint(1);
         setState("reduced");
+      } else if (noAutoPlay.matches) {
+        // On touch devices the sticky hero stays visible the whole scroll, so the
+        // animation rAF loop would compete with the panel scroll handler the entire
+        // time. Show the completed illustration immediately instead.
+        paint(1);
+        setState("complete");
       } else {
         paint(Math.min(1, elapsed / duration));
         setState(complete ? "complete" : paused ? "paused" : "idle");
