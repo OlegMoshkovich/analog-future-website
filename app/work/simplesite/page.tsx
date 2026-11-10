@@ -51,7 +51,7 @@ export default function SimpleSitePage() {
           Product strategy / UX/UI / AI system / Mobile + web development · 2025–26 · Live
         </p>
         <figure className="ss-hero__visual">
-          <svg className="ss-hero__symbol" viewBox="0 0 2716 1120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="SimpleSite construction-site photo mockup and wordmark, with the scaffold symbol gently assembling above it.">
+          <svg className="ss-hero__symbol" viewBox="0 0 2697 1120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SimpleSite construction-site photo mockup and wordmark, with the scaffold symbol gently assembling above it.">
             <image href={`${assetRoot}/simplesite-hero@2x.png`} width="2716" height="1120" />
             <rect x="1945" y="353" width="234" height="234" fill="#000104" />
             <g transform="translate(1926 334) scale(.376)">
