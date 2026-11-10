@@ -4,7 +4,7 @@ import "./globals.css";
 import "./motion.css";
 
 export const metadata: Metadata = {
-  title: "Analog Future — Design & Product Studio",
+  title: "Analog Future | Design & Product Studio",
   description:
     "Analog Future is an independent studio creating brand systems, digital products, and visual communication.",
   icons: {

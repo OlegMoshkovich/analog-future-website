@@ -1,5 +1,5 @@
 .coolbuilding-page {
-  --cb-bg: #292a27;
+  --cb-bg: var(--af-charcoal);
   --cb-line: rgba(255, 255, 255, 0.22);
   padding-bottom: 30px;
   background: var(--cb-bg);
@@ -97,7 +97,7 @@
   height: 560px;
   overflow: hidden;
   background: #ebe7dd;
-  color: #292a27;
+  color: var(--af-charcoal);
   font-family: "Instrument Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -162,7 +162,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: #292a27;
+  color: var(--af-charcoal);
   cursor: pointer;
   transform: translate(-50%, -70%);
 }
@@ -187,7 +187,7 @@
   left: 12px;
   width: 12px;
   height: 10px;
-  background: #292a27;
+  background: var(--af-charcoal);
   box-shadow: 0 0 0 2px rgba(248, 247, 240, 0.8);
   transition: background-color 150ms ease, transform 150ms ease;
 }
@@ -267,8 +267,8 @@
 
 .cb-atlas__filters button:hover,
 .cb-atlas__filters button.is-active {
-  border-bottom-color: #292a27;
-  color: #292a27;
+  border-bottom-color: var(--af-charcoal);
+  color: var(--af-charcoal);
 }
 
 .cb-atlas__card-list {
@@ -290,7 +290,7 @@
   border: 0;
   border-bottom: 1px solid #d5d0c5;
   background: transparent;
-  color: #292a27;
+  color: var(--af-charcoal);
   text-align: left;
   cursor: pointer;
   transition: background-color 150ms ease;
@@ -377,7 +377,7 @@
 }
 
 .cb-atlas__rail-bottom a {
-  color: #292a27;
+  color: var(--af-charcoal);
   text-decoration: underline;
   text-underline-offset: 3px;
   white-space: nowrap;
@@ -895,7 +895,7 @@
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #292a27;
+  color: var(--af-charcoal);
   font-size: 22px;
   font-weight: 300;
   cursor: pointer;
@@ -1121,3 +1121,6 @@
     bottom: 14px;
   }
 }
+
+.coolbuilding-page .cb-identity {height:auto;}
+.cb-identity h2 {position:static;margin:0 0 24px;}

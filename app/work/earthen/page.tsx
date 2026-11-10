@@ -4,7 +4,7 @@ import { ProjectNavigation } from "@/components/site/project-navigation";
 import "./earthen.css";
 
 export const metadata: Metadata = {
-  title: "Earthen — Analog Future",
+  title: "Earthen | Analog Future",
   description: "A flexible brand and educational platform for personal development.",
 };
 
@@ -67,8 +67,8 @@ export default function EarthenPage() {
             <image href="/assets/projects/earthen-figma/hero-wordmark.svg" x="827" y="238.598" width="390" height="93" />
           </svg>
         </figure>
-        <p className="earthen-hero__description">
-          We helped reposition an established healing practice as Earthen—a broader educational platform for multiple modalities, structured programs, and community.
+        <p className="earthen-hero__description af-body">
+          We helped reposition an established healing practice as Earthen, a broader educational platform for multiple modalities, structured programs, and community.
         </p>
       </section>
 
@@ -76,11 +76,7 @@ export default function EarthenPage() {
         <div className="earthen-problem__inner">
           <div className="earthen-problem__copy">
             <h2 className="earthen-micro" id="earthen-problem-title">Building beyond a single methodology</h2>
-            <p>
-              The founders had built a trusted practice around Theta Healing, but the methodology had also become a constraint. They wanted the freedom to incorporate other techniques, welcome a broader audience.
-              <br /><br />
-              The challenge was to evolve the practice without losing the intimacy and trust they had already established.
-            </p>
+            <p className="project-intro">The founders had built a trusted mindfulness practice but wanted to explore new methods and reach a broader audience without losing the personal connection and loyalty they had cultivated.</p>
           </div>
           <figure className="earthen-problem__media">
             <img
@@ -96,7 +92,7 @@ export default function EarthenPage() {
       <section className="earthen-platform" aria-labelledby="earthen-platform-title">
         <p className="earthen-micro">From practice to platform</p>
         <h2 id="earthen-platform-title">
-          We transformed an established healing practice into a flexible brand and educational platform—with a clear pathway from first encounter to deeper practice and leadership.
+          We transformed an established healing practice into a flexible brand and educational platform, with a clear pathway from first encounter to deeper practice and leadership.
         </h2>
       </section>
 
@@ -109,7 +105,7 @@ export default function EarthenPage() {
               <div>
                 <p className="earthen-journey__stage">{stage}</p>
                 <h3>{program}</h3>
-                <p className="earthen-journey__body">{body}</p>
+                <p className="earthen-journey__body af-body">{body}</p>
               </div>
             </article>
           ))}
@@ -142,8 +138,8 @@ export default function EarthenPage() {
       </section>
 
       <section className="earthen-section earthen-identity" aria-labelledby="earthen-identity-title">
+        <h2 className="earthen-micro" id="earthen-identity-title">Identity system</h2>
         <div className="earthen-identity__grid">
-          <h2 className="earthen-micro" id="earthen-identity-title">Identity system</h2>
 
           <div className="earthen-identity__mark">
             <img
@@ -180,7 +176,7 @@ export default function EarthenPage() {
 
       <CaseStudyFooter
         eyebrow="The solution"
-        statement="We built Earthen from strategy to expression—defining its identity, program structure, art direction, photography, and digital experience. A cohesive platform designed to help the practice grow beyond a single methodology."
+        statement="We built Earthen from strategy to expression, defining its identity, program structure, art direction, photography, and digital experience. A cohesive platform designed to help the practice grow beyond a single methodology."
         currentHref="/work/earthen"
       />
     </main>

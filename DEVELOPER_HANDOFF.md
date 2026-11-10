@@ -2,14 +2,24 @@
 
 ## Approved version
 
-This is the complete code and asset snapshot behind Analog Future's approved Sites version 69, published on 31 October 2026.
+This is the complete code and asset snapshot behind Analog Future's approved Sites version 75, published on 5 November 2026.
 
-- Original source commit: `7bd07ef25d15b8a461dc0918de827013b045ed75`
+- Original source commit: `516eac381edd38c68783e37369b77574b44b0642`
 - Preview: https://analog-future-case-study-preview.anjica-bananica.chatgpt.site
 - GitHub branch: `handoff/approved-website-2026-10-31`
 - Intended production domain: `analog-future.co`
 
 The README has been refreshed and this guide and `SOURCE_SNAPSHOT.json` added for handoff. Application code and original assets match the approved source snapshot. The manifest records the original tracked files and Git blob hashes, including the original README.
+
+## Latest approved refinements
+
+- Shared `#181818` page background, consistent header logos, and responsive navigation.
+- All seven project opening paragraphs use the Studio body style: Instrument Sans at 17px. Earthen's founders paragraph and shared closing statements use the approved serif treatment.
+- Refined landing-page spacing, mobile illustration placement, and Cadence artwork background matching the website.
+- Identity panels use the page background, with accessible HTML labels and preserved brand artwork.
+- Updated ValMia, Earthen, SimpleSite, Coolbuilding, and Cadence copy and alignment.
+
+Production build and all 11 checks passed, including 55 internal links across nine pages.
 
 ## Get the code
 

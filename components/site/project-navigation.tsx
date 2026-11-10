@@ -1,9 +1,9 @@
+import { Wordmark } from "@/components/site/wordmark";
+
 export function ProjectNavigation() {
   return (
     <header className="project-nav">
-      <a className="project-nav__brand" href="/" aria-label="Analog Future home">
-        Analog Future
-      </a>
+      <Wordmark />
       <nav aria-label="Project navigation">
         <a href="/#work">Work</a>
         <a href="/studio">About</a>

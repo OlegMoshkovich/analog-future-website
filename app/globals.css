@@ -21,8 +21,8 @@
 
 :root {
   --af-ink: #ffffff;
-  --af-charcoal: #292a27;
-  --af-paper: #292a27;
+  --af-charcoal: #181818;
+  --af-paper: var(--af-charcoal);
   --af-warm: #ffffff;
   --af-lavender: #9fa8ff;
   --af-lavender-light: #bfc5fd;
@@ -992,3 +992,50 @@ textarea {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Shared section labels are 25% larger than the original 11px labels. */
+main :is(.af-micro, .af-section-label, .studio-label, .project-kicker,
+  .case-kicker, .ec-kicker, .cubed-label, .cadence-micro, .earthen-micro,
+  .vm-micro, .cb-micro, .wc-kicker, .ss-mono) {
+  font-size: 13.75px !important;
+  line-height: 1.35 !important;
+}
+main .project-nav nav { font-size: 14px !important; }
+@media (max-width: 600px) {
+  main .project-nav.project-nav nav { font-size: 12.5px !important; }
+}
+
+/* Shared prose and eyebrow styles across Studio and the case studies. */
+:root { --af-body-font: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; --af-body-size: 17px; --af-body-leading: 1.52; }
+main .af-body, main .studio-intro__copy, main .studio-purpose__copy p,
+main .af-studio-teaser__description, main .af-feature-project__description,
+main .af-process-card__copy > p {
+  font-family: var(--af-body-font) !important;
+  font-size: var(--af-body-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--af-body-leading) !important;
+  letter-spacing: normal !important;
+}
+main :is(.af-micro, .af-section-label, .studio-label, .project-kicker,
+ .case-kicker, .ec-kicker, .cubed-label, .cadence-micro, .earthen-micro,
+ .vm-micro, .cb-micro, .wc-kicker, .ss-mono) {
+  font-family: "Karla", "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.68);
+}
+/* Labels on light panels retain the same type with readable dark ink. */
+.af-approach :is(.af-micro,.af-section-label), .studio-contact .studio-label,
+.wc-explorer .wc-kicker { color: rgba(24,24,24,.72); }
+
+main .project-intro {
+  font:400 clamp(24px,2.1vw,30px)/1.333333 Georgia,"Times New Roman",serif !important;
+  letter-spacing:-.3px !important;
+}
+main .project-footer.project-footer--navigation > .project-footer__statement {
+  font:400 clamp(28px,2.4vw,34px)/1.3 Georgia,"Times New Roman",serif;
+  letter-spacing:-.4px;
+}
+/* Introductions remain in document flow as their text wraps. */
+main :is(.cubed-hero,.vm-hero,.cb-hero,.ss-hero) {height:auto;}

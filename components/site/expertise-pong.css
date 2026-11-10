@@ -1,6 +1,6 @@
 .studio-expertise { padding-bottom: 100px; }
 .expertise-pong {
-  --pong-surface: #292a27;
+  --pong-surface: var(--af-charcoal);
   --pong-ink: #f7f4ef;
   --pong-line: var(--studio-line);
   position: relative;

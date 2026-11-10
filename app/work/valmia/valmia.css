@@ -1,5 +1,5 @@
 .valmia-page {
-  --vm-bg: #292a27;
+  --vm-bg: var(--af-charcoal);
   --vm-green: #172721;
   --vm-hub: #4b573d;
   --vm-line: rgba(255, 255, 255, 0.22);
@@ -35,7 +35,6 @@
 }
 
 .vm-section,
-.vm-community,
 .valmia-page .project-footer {
   border-top: 1px solid var(--vm-line);
 }
@@ -141,7 +140,6 @@
 
 .vm-community__intro {
   position: relative;
-  border-right: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .vm-community__intro h2 {
@@ -172,16 +170,6 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: 21px;
   line-height: 24px;
-}
-
-.vm-community__outcome p::before {
-  position: absolute;
-  top: -25px;
-  left: 0;
-  width: 52px;
-  height: 1px;
-  background: rgba(75, 87, 61, 0.7);
-  content: "";
 }
 
 .vm-community__chart {
@@ -271,6 +259,7 @@
 }
 
 .vm-loop {
+  border-top: 0;
   display: grid;
   grid-template-columns: 360px 920px;
   height: 352px;
@@ -752,3 +741,6 @@
     margin-top: 28px;
   }
 }
+
+.vm-community__outcome p{margin:0;}
+.vm-community__outcome .vm-micro{padding-top:3px;}

@@ -1,5 +1,5 @@
 .case-study {
-  --case-bg: #292a27;
+  --case-bg: var(--af-charcoal);
   --case-fg: #fff;
   --case-line: rgba(255, 255, 255, 0.2);
   --case-muted: rgba(255, 255, 255, 0.68);

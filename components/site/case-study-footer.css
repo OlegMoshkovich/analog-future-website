@@ -30,3 +30,5 @@ main .project-footer.project-footer--navigation > .project-footer__statement { m
   .project-pagination { gap: 16px; }
   .project-pagination__label { font-size: 10px; letter-spacing: .04em; }
 }
+
+main .project-footer.project-footer--navigation > .project-footer__statement { height:auto; }

@@ -1,5 +1,5 @@
 .ss-case {
-  --ss-bg: #292a27;
+  --ss-bg: var(--af-charcoal);
   --ss-text: #ffffff;
   --ss-line: rgba(255, 255, 255, 0.22);
   --ss-yellow: #ffe68d;
@@ -561,3 +561,17 @@
   .ss-scope__list { grid-template-columns: 1fr; }
   .ss-scope__list li { border-left: 0; }
 }
+
+.ss-hero__intro {margin-left:0;width:min(910px,100%);}
+.ss-scope {grid-template-columns:285px minmax(0,938px);column-gap:114px;}
+.ss-scope__list li:first-child {padding-left:0;border-left:0;}
+.ss-product__media img {margin-top:0;}
+.ss-metrics__grid {margin-top:40px;}
+@media(max-width:1080px){.ss-scope{grid-template-columns:270px minmax(0,1fr);column-gap:48px}}
+@media(max-width:760px){.ss-scope{display:block}.ss-scope__list li{padding-left:0}}
+
+.ss-product > h2{font-size:36px;line-height:43px;letter-spacing:-.011em;}
+.ss-feature[aria-labelledby="field-proof-title"] .ss-feature__copy > .af-body{margin-top:24px;}
+.ss-scope__list li{gap:12px;}
+.ss-scope__list strong{margin-top:0;}
+@media(max-width:760px){.ss-product > h2{font-size:32px;line-height:39px;}}

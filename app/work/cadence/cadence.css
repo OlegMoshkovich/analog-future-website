@@ -1,5 +1,5 @@
 .cadence-page {
-  --cadence-bg: #292a27;
+  --cadence-bg: var(--af-charcoal);
   --cadence-fg: #ffffff;
   --cadence-line: rgba(255, 255, 255, 0.22);
   --cadence-blue: #6c95ef;
@@ -688,3 +688,13 @@
     transition: none !important;
   }
 }
+
+.cadence-page .cadence-identity {height:auto;padding:32px 41px 48px;}
+.cadence-identity h2 {position:static;margin:0 0 24px;}
+@media(max-width:600px){.cadence-page .cadence-identity{padding-inline:20px}}
+
+.cadence-page .cadence-hero {height:auto;display:flex;flex-direction:column;gap:24px;padding:48px 41px 64px;}
+.cadence-hero :is(.cadence-hero__number,h1,.cadence-hero__meta,.cadence-hero__media,.cadence-hero__description){position:static;margin:0;}
+.cadence-hero .cadence-hero__media{width:100%;height:auto;aspect-ratio:1358/560;}
+.cadence-hero .cadence-hero__description{width:min(927px,100%);}
+@media(max-width:600px){.cadence-page .cadence-hero{padding:36px 20px 48px;}}

@@ -1,8 +1,8 @@
 # Analog Future website
 
-Complete approved website handoff, copied from Sites version 69 on 31 October 2026.
+Complete approved website handoff, copied from Sites version 75 on 5 November 2026.
 
-The source snapshot is `7bd07ef25d15b8a461dc0918de827013b045ed75`. This branch includes the homepage, Studio page, all seven case studies, local images and fonts, interactive maps, and the final logo animations.
+The source snapshot is `516eac381edd38c68783e37369b77574b44b0642`. This branch includes the homepage, Studio page, all seven case studies, local images and fonts, interactive maps, and the final logo animations.
 
 [Developer setup and publishing guide](DEVELOPER_HANDOFF.md)
 
