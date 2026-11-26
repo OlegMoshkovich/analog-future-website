@@ -56,10 +56,10 @@
 .cb-hero h1 {
   margin: 0;
   font-family: "Instrument Sans", "Helvetica Neue", sans-serif;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 68px;
-  letter-spacing: -1.2px;
+  font-size: 25.6px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.02em;
 }
 
 .cb-hero__visual {
@@ -395,9 +395,8 @@
 
 .cb-idea {
   display: grid;
-  grid-template-columns: 380px 1px 876px;
+  grid-template-columns: min(28%, 380px) 1px minmax(0, 876px);
   column-gap: 32px;
-  height: 766px;
   padding: 68px 41px;
   border-top: 1px solid var(--cb-line);
 }
@@ -407,7 +406,6 @@
 }
 
 .cb-idea__copy h2 {
-  width: 380px;
   margin: 20px 0 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 30px;
@@ -418,14 +416,12 @@
 
 .cb-idea__rule {
   width: 1px;
-  height: 628px;
   background: var(--cb-line);
 }
 
 .cb-idea__visual {
-  width: 876px;
-  height: 628px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -495,17 +491,6 @@
   font-size: 26px;
   font-weight: 400;
   line-height: 26px;
-}
-
-@media (max-width: 75rem) {
-  .cb-idea {
-    grid-template-columns: minmax(260px, 0.44fr) 1px minmax(0, 1fr);
-  }
-
-  .cb-idea__copy h2,
-  .cb-idea__visual {
-    width: 100%;
-  }
 }
 
 @media (max-width: 56rem) {
@@ -585,11 +570,6 @@
     display: none;
   }
 
-  .cb-idea__visual {
-    height: auto;
-    aspect-ratio: 876 / 628;
-  }
-
   .cb-identity {
     padding-block: 28px;
   }
@@ -647,8 +627,8 @@
   }
 
   .cb-hero h1 {
-    font-size: 46px;
-    line-height: 50px;
+    font-size: 18.4px;
+    line-height: 1.15;
   }
 
   .cb-hero__description {
