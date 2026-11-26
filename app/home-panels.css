@@ -110,17 +110,19 @@
   }
 }
 
-/* The opening pairs the wordmark and services with the rotating dot study. */
+/* The wordmark sits on the left. The services sit on the right, level with Future. */
 .af-home--panels > .af-hero,
 .af-home--panels .af-hero__inner { min-height: max(100svh, 42rem); }
 
 .af-home--panels .af-hero__inner {
+  --af-hero-title: clamp(6.5rem, 14.6vw, 13.25rem);
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: start;
-  align-content: center;
-  column-gap: clamp(3rem, 5vw, 5rem);
-  padding-block: clamp(3rem, 7svh, 4.25rem) calc(var(--af-tab-height) + 3rem);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  align-content: start;
+  column-gap: clamp(2.5rem, 5vw, 4.5rem);
+  padding-top: clamp(4.5rem, 9vh, 6.75rem);
+  padding-bottom: calc(var(--af-tab-height) + 3rem);
 }
 
 .af-hero__copy { min-width: 0; }
@@ -143,11 +145,13 @@
 
 .af-home--panels .af-hero h1 {
   position: static;
-  margin: 2.65rem 0 0;
-  font-size: clamp(7rem, 12.4vw, 11rem);
+  margin: calc(1.35rem + var(--af-hero-title) * 0.28) 0 0;
+  font-size: var(--af-hero-title);
+  line-height: 0.74;
 }
 
 .af-home--panels .af-hero h1 em {
+  margin-top: 0.06em;
   margin-left: .6em;
   color: var(--af-lavender);
 }
@@ -155,30 +159,18 @@
 .af-home--panels .af-hero__services {
   --af-service-indent: 1.45rem;
   position: static;
-  margin: clamp(5rem, 8vw, 7rem) 0 0;
+  margin: 0;
+  justify-self: end;
+  transform: translateY(calc(var(--af-hero-title) * 0.12));
 }
 
 .af-home--panels .af-hero__services li {
   display: grid;
-  grid-template-columns: var(--af-service-indent) minmax(0, 1fr);
+  grid-template-columns: var(--af-service-indent) max-content;
+  white-space: nowrap;
 }
 
 .af-home--panels .af-hero__services .af-hero__service-name { width: auto; }
-
-.af-hero__drawing {
-  --studio-lavender: var(--af-lavender-light);
-  width: min(100%, 32rem);
-  min-width: 0;
-  margin-top: -1rem;
-}
-
-.af-hero__drawing .studio-dot-study { width: 100%; margin: 0; }
-.af-hero__drawing .studio-dot-study__drawing {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 750 / 790;
-}
-.af-hero__drawing .studio-dot-study__controls { padding-top: 0; }
 
 .af-home--panels .af-hero__cue {
   display: block;
@@ -345,18 +337,14 @@
   }
 
   .af-home--panels .af-hero__inner {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    column-gap: 2rem;
+    column-gap: 1.75rem;
     padding-top: 3rem;
   }
   .af-home--panels .af-hero__context { gap: .9rem; }
-  .af-home--panels .af-hero h1 {
-    margin-top: 2.5rem;
-    font-size: clamp(5rem, 11.4vw, 7rem);
-  }
+  .af-home--panels .af-hero__inner { --af-hero-title: clamp(4.25rem, 10vw, 7rem); }
+  .af-home--panels .af-hero h1 { margin-top: 2.5rem; }
   .af-home--panels .af-hero h1 em { margin-left: .35em; }
-  .af-home--panels .af-hero__services { margin-top: 5rem; font-size: .625rem; }
-  .af-hero__drawing { margin-top: 3rem; }
+  .af-home--panels .af-hero__services { font-size: .625rem; transform: none; }
   .af-studio-teaser { margin-top: 1.25rem; }
   .af-home--panels .af-feature-project { height: auto; }
   .af-home--panels .af-feature-project__artwork { aspect-ratio: 836 / 600; }
@@ -376,17 +364,16 @@
 @media (max-width: 576px) {
   .af-home--panels .af-hero__inner {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 2rem;
+    align-items: start;
+    row-gap: 2.5rem;
     padding-top: 2rem;
   }
   .af-home--panels .af-hero h1 {
     font-size: clamp(4.5rem, 20vw, 7rem);
   }
-  .af-home--panels .af-hero__services { margin-top: 3.5rem; }
-  .af-hero__drawing {
-    justify-self: end;
-    width: min(80%, 20rem);
-    margin-top: 0;
+  .af-home--panels .af-hero__services {
+    justify-self: start;
+    margin: 0;
   }
 
   .af-home--panels .af-feature-project__content { min-height: 24rem; padding: 1.5rem; }
@@ -415,19 +402,6 @@
 }
 
 @media (max-width: 576px) {
-  .af-home--panels .af-hero__copy { display: contents; }
-  .af-home--panels .af-hero__inner { row-gap: 1.5rem; }
-  .af-home--panels .af-hero__context { grid-row: 1; }
-  .af-home--panels .af-hero h1 { grid-row: 2; margin-top: 1rem; }
-  .af-home--panels .af-hero__drawing {
-    grid-row: 3;
-    justify-self: center;
-    width: min(100%, 22rem);
-    margin: 0;
-  }
-  .af-home--panels .af-hero__services {
-    grid-row: 4;
-    margin-top: 0;
-    font-size: 11px;
-  }
+  .af-home--panels .af-hero h1 { margin-top: 2.75rem; }
+  .af-home--panels .af-hero__services { font-size: 11px; }
 }

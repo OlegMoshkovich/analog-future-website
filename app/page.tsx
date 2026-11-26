@@ -1,6 +1,5 @@
 import { ProcessCard } from "@/components/site/process-card";
 import { ProjectCard } from "@/components/site/project-card";
-import { ConnectTheDots } from "@/components/site/connect-the-dots";
 import "./home-panels.css";
 
 const projects = [
@@ -98,17 +97,13 @@ export default function Home() {
               <span>Analog</span>
               <em>Future</em>
             </h1>
-
-            <ol className="af-hero__services" aria-label="Studio services">
-              <li><span>01</span><span className="af-hero__service-name">Brand strategy &amp; identity</span></li>
-              <li><span>02</span><span className="af-hero__service-name">Digital product design &amp; dev</span></li>
-              <li><span>03</span><span className="af-hero__service-name">AI products &amp; systems</span></li>
-            </ol>
           </div>
 
-          <div className="af-hero__drawing">
-            <ConnectTheDots />
-          </div>
+          <ol className="af-hero__services" aria-label="Studio services">
+            <li><span>01</span><span className="af-hero__service-name">Brand strategy &amp; identity</span></li>
+            <li><span>02</span><span className="af-hero__service-name">Digital product design &amp; dev</span></li>
+            <li><span>03</span><span className="af-hero__service-name">AI products &amp; systems</span></li>
+          </ol>
 
           <a className="af-hero__cue af-micro" href="#studio">
             Scroll Up
