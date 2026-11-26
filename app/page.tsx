@@ -105,8 +105,10 @@ export default function Home() {
             <li><span>03</span><span className="af-hero__service-name">AI products &amp; systems</span></li>
           </ol>
 
-          <a className="af-hero__cue af-micro" href="#studio">
-            Scroll Up
+          <a className="af-hero__cue" href="#studio" aria-label="Scroll">
+            <svg viewBox="0 0 16 36" aria-hidden="true" focusable="false">
+              <path d="M8 1.5v23M2.25 18.75 8 25.5l5.75-6.75" fill="none" stroke="currentColor" strokeWidth="1.15" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </a>
         </div>
       </section>

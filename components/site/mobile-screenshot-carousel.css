@@ -1,0 +1,51 @@
+.mobile-screenshot-carousel { display: none; }
+
+@media (max-width: 832px) {
+  .mobile-screenshot-carousel { display: block; min-width: 0; margin-top: 32px; }
+  .mobile-screenshot-carousel__viewport {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% - 24px);
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .mobile-screenshot-carousel__viewport::-webkit-scrollbar { display: none; }
+  .mobile-screenshot-carousel__slide {
+    min-width: 0;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  .mobile-screenshot-carousel__slide:last-child { scroll-snap-align: end; }
+  .mobile-screenshot-carousel__slide figcaption {
+    margin: 0 0 20px;
+    font: 500 13.75px/1.35 "Karla", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .mobile-screenshot-carousel__artwork { display: block; width: 100%; height: auto; overflow: hidden; }
+  .mobile-screenshot-carousel__controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 20px; }
+  .mobile-screenshot-carousel__controls button {
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 1px solid var(--af-line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--af-ink);
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .mobile-screenshot-carousel__controls button:disabled { opacity: .3; cursor: default; }
+  .mobile-screenshot-carousel__dots { display: flex; gap: 0; }
+  .mobile-screenshot-carousel__dots button { min-width: 28px; border: 0; border-radius: 0; }
+  .mobile-screenshot-carousel__dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--af-ink); opacity: .3; }
+  .mobile-screenshot-carousel__dots [aria-pressed="true"] span { background: var(--cadence-blue); opacity: 1; }
+  .mobile-screenshot-carousel__count { font: 400 12px/1.4 "Karla", sans-serif; color: rgba(255,255,255,.68); font-variant-numeric: tabular-nums; }
+}

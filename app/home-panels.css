@@ -177,10 +177,26 @@
   right: auto;
   bottom: calc(var(--af-tab-height) + 1.5rem);
   left: 50%;
+  width: 1rem;
+  height: 2.25rem;
   transform: translateX(-50%);
-  color: #92938c;
-  font-size: .625rem;
-  font-weight: 500;
+  color: #c8c8c2;
+}
+
+.af-home--panels .af-hero__cue svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: af-cue-float 2.6s ease-in-out infinite;
+}
+
+@keyframes af-cue-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .af-home--panels .af-hero__cue svg { animation: none; }
 }
 
 .af-home--panels .af-hero__cue:is(:hover, :focus-visible) { color: var(--af-warm); }

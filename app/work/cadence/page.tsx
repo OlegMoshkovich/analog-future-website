@@ -2,18 +2,16 @@ import { IdentitySystem } from "@/components/site/identity-system";
 import type { Metadata } from "next";
 import { CaseStudyFooter } from "@/components/site/case-study-footer";
 import { ProjectNavigation } from "@/components/site/project-navigation";
+import { MobileScreenshotCarousel } from "@/components/site/mobile-screenshot-carousel";
+import { CadenceAnalyticsScreen } from "./cadence-analytics-screen";
+import { CadenceHeroAnimation } from "./cadence-hero-animation";
+import { CadenceTimelineDemo } from "./cadence-timeline-demo";
 import "./cadence.css";
 
 export const metadata: Metadata = {
   title: "Cadence | Analog Future",
   description: "A reflective record for remembering everyday life and seeing its patterns over time.",
 };
-
-const challenges = [
-  ["01", "Life is Fragmented", "Important parts of life are spread across tools and contexts."],
-  ["02", "Hard to see", "Patterns are difficult to spot, so time and attention stay abstract."],
-  ["03", "Easy to lose balance", "Without perspective, small choices quietly become habits."],
-] as const;
 
 const journey = [
   ["01", "Log the day", "Quickly capture activities as you go."],
@@ -22,12 +20,21 @@ const journey = [
   ["04", "Reflect", "Build awareness and make intentional change."],
 ] as const;
 
-const analytics = [
-  ["/assets/projects/cadence-figma/analytics-overview@2x.png", "Cadence analytics overview showing streaks, logged days, and total hours."],
-  ["/assets/projects/cadence-figma/analytics-hours@2x.png", "Cadence hours view showing a category breakdown."],
-  ["/assets/projects/cadence-figma/analytics-spend@2x.png", "Cadence spend view showing monthly and daily spending patterns."],
-  ["/assets/projects/cadence-figma/analytics-mood@2x.png", "Cadence mood view showing changes across a month."],
-] as const;
+const analyticsSlides = ([
+  { view: "overview", title: "Overview", alt: "Cadence analytics overview showing streaks, logged days, and 6,072 total hours logged." },
+  { view: "hours", title: "Hours", alt: "Cadence hours view with 1,704 hours logged and a category breakdown." },
+  { view: "spend", title: "Spend", alt: "Cadence spend view showing $19,261.50 total spend and monthly and daily spending patterns." },
+  { view: "mood", title: "Mood", alt: "Cadence mood view showing changes across January and an average mood of Pleasant." },
+] as const).map(slide => ({
+  ...slide, src: `/assets/projects/cadence-figma/analytics-${slide.view}@2x.png`,
+  crop: "40 75 591 791", width: 631, height: 866,
+}));
+
+const experienceSlides = [
+  { title: "Daily view", crop: "72 40 620 1120", alt: "Cadence daily view for logging activities, feelings, and moments." },
+  { title: "Weekly view", crop: "710 40 620 1120", alt: "Cadence weekly view showing activity patterns across seven days." },
+  { title: "Yearly view", crop: "1348 40 620 1120", alt: "Cadence yearly view showing the rhythm of activities across months." },
+].map(slide => ({ ...slide, src: "/assets/projects/cadence-figma/feature@2x.png", width: 2046, height: 1384 }));
 
 const scope = ["Product strategy", "Brand identity", "UX/UI design", "Design system", "Development"] as const;
 
@@ -42,36 +49,10 @@ export default function CadencePage() {
         <p className="cadence-micro cadence-hero__meta">
           Design direction / Brand identity / UX/UI · 2026 · In development
         </p>
-        <figure className="cadence-hero__media" aria-label="Cadence identity with a gently pulsing blue symbol beside the white wordmark.">
-          <svg className="cadence-hero__identity" viewBox="0 0 1174 480" role="img" aria-label="Cadence">
-            <g className="cadence-hero__symbol" fill="#7594e8" transform="translate(11 0)">
-              {[{ x: 358.5, y: 202, width: 17, height: 71 }, { x: 378.5, y: 191, width: 17, height: 92 }, { x: 398.5, y: 184, width: 19, height: 107 }, { x: 420, y: 191, width: 17, height: 92 }, { x: 440, y: 202, width: 17, height: 71 }].map((bar, index) => (
-                <rect key={index} className="cadence-hero__bar" {...bar} rx="4" />
-              ))}
-            </g>
-            <image href="/assets/projects/cadence-figma/wordmark.svg" x="491" y="205" width="277" height="64.6" aria-hidden="true" />
-          </svg>
-        </figure>
+        <CadenceHeroAnimation />
         <p className="cadence-hero__description af-body">
-          We built Cadence because we wanted to remember our lives better, so we could return to a random Tuesday and see what we did. Not only work, but the things that make up a life: how we felt, what we read or watched, what we spent, and the thoughts we wrote down. Over time, these details reveal the patterns of our lives.
+          Cadence is a time tracker and journal for everyday life. We built it so we could go back to a random Tuesday and remember what we worked on, what we read or watched, and how we felt. Over time, those details show us what we make time for and when we have the most energy.
         </p>
-      </section>
-
-      <section className="cadence-section cadence-challenge" aria-labelledby="cadence-challenge-title">
-        <div className="cadence-challenge__grid">
-          <div className="cadence-context cadence-challenge__context">
-            <p className="cadence-micro">The challenge</p>
-            <h2 id="cadence-challenge-title">Life moves fast.</h2>
-            <p className="af-body">Work, wellbeing, spending, and personal life live across different tools, making the whole picture hard to see.</p>
-          </div>
-          {challenges.map(([number, title, body]) => (
-            <article className="cadence-challenge__item" key={title}>
-              <p className="cadence-micro">{number}</p>
-              <h3>{title}</h3>
-              <p className="af-body">{body}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="cadence-section cadence-experience" aria-labelledby="cadence-experience-title">
@@ -81,13 +62,9 @@ export default function CadencePage() {
             <h2 id="cadence-experience-title">One system.<br />Multiple scales.</h2>
           </div>
           <figure className="cadence-experience__media">
-            <img
-              src="/assets/projects/cadence-figma/feature@2x.png"
-              width="2046"
-              height="1384"
-              alt="Cadence daily, weekly, and yearly views shown side by side."
-            />
+            <CadenceTimelineDemo />
           </figure>
+          <MobileScreenshotCarousel id="cadence-experience-slides" label="Cadence views" slides={experienceSlides} artwork={{ 0: <CadenceTimelineDemo view="daily" />, 2: <CadenceTimelineDemo view="yearly" /> }} />
         </div>
       </section>
 
@@ -111,13 +88,17 @@ export default function CadencePage() {
 
       <section className="cadence-analytics" aria-labelledby="cadence-analytics-title">
         <h2 className="cadence-micro" id="cadence-analytics-title">Analytics</h2>
-        <div className="cadence-analytics__grid">
-          {analytics.map(([src, alt]) => (
-            <figure key={src}>
-              <img src={src} width="631" height="866" alt={alt} />
+        <div className="cadence-analytics__grid" data-no-motion>
+          {analyticsSlides.map(({ view, src, alt, width, height }) => (
+            <figure key={view}>
+              <CadenceAnalyticsScreen view={view} src={src} alt={alt} width={width} height={height} />
             </figure>
           ))}
         </div>
+        <MobileScreenshotCarousel id="cadence-analytics-slides" label="Cadence analytics" slides={analyticsSlides}
+          artwork={Object.fromEntries(analyticsSlides.map((slide, index) => (
+            [index, <CadenceAnalyticsScreen key={slide.view} {...slide} />]
+          )))} />
       </section>
 
       <section className="cadence-identity" aria-labelledby="cadence-identity-title">
