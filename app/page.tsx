@@ -123,7 +123,7 @@ export default function Home() {
           <div className="af-manifesto__inner">
             <p className="af-section-label af-micro">01 / What we do</p>
             <h2 id="af-manifesto-title">
-              Technology moves quickly. People still need ideas they can{" "}
+              Technology moves quickly. People still need design they can{" "}
               <em>understand</em>, <em>trust</em>, and <em>feel</em>.
             </h2>
             <div className="af-studio-teaser">

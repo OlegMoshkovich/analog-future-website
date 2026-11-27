@@ -172,7 +172,12 @@ export function ExpertisePong() {
         <output className="pong-rally" aria-label={`${rally} consecutive exchanges`}>Rally <span>{String(rally).padStart(2, "0")}</span></output>
         <p className="pong-hint" id="pong-instructions">{paused ? "A moment to think. Resume when ready." : mode === "play" ? "Move, drag, or use ↑ ↓. Esc to watch." : "Watch the exchange, or join the rally."}</p>
         <div className="pong-controls">
-          <button className="pong-join" ref={joinRef} onClick={() => changeMode(modeRef.current === "watch" ? "play" : "watch")}>{mode === "watch" ? "Join the rally" : "Watch the rally"} <span aria-hidden="true">↗</span></button>
+          <button className="pong-join" ref={joinRef} onClick={() => changeMode(modeRef.current === "watch" ? "play" : "watch")}>
+            {mode === "watch" ? "Join the rally" : "Watch the rally"}
+            <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+              <path d="M1.25 10.75 10.75 1.25M5.1 1.25h5.65V6.9" fill="none" stroke="currentColor" strokeWidth="1.15" />
+            </svg>
+          </button>
           <button className="pong-control-icon" onClick={() => changePause(!pausedRef.current)} aria-label={paused ? "Resume the rally" : "Pause the rally"}>{paused ? <span aria-hidden="true">▷</span> : <span aria-hidden="true">Ⅱ</span>}</button>
           <button className="pong-control-icon" onClick={restart} aria-label="Restart the rally"><span aria-hidden="true">↺</span></button>
         </div>
