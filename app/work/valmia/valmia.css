@@ -619,7 +619,7 @@
 
   .vm-hero h1 {
     font-size: clamp(48px, 16vw, 64px);
-    line-height: 1;
+    line-height: 1.22;
   }
 
   .vm-hero__meta {
@@ -628,9 +628,9 @@
   }
 
   .vm-hero__visual {
-    min-height: 260px;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
   }
 
   .vm-hero__description {
@@ -700,8 +700,7 @@
   .vm-scope__item {
     min-height: 0;
     padding: 32px 0 32px 28px;
-    border-top: 1px solid var(--vm-line);
-    border-left: 0;
+    border: 0;
   }
 
   .vm-loop__dot,
@@ -734,6 +733,7 @@
 
   .valmia-page .project-footer {
     height: auto;
+    border-top: 0;
   }
 
   .valmia-page .project-footer__next {
