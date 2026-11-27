@@ -20,7 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}<SiteMotion /></body>
+      <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var id=location.hash.slice(1);if((location.pathname!=="/"&&location.pathname!=="")||(id!=="studio"&&id!=="work"&&id!=="approach"&&id!=="contact"))return;document.documentElement.style.scrollBehavior="auto";history.scrollRestoration="manual";})();`,
+          }}
+        />
+        {children}
+        <SiteMotion />
+      </body>
     </html>
   );
 }

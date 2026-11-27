@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { CaseStudyFooter } from "@/components/site/case-study-footer";
 import { ProjectNavigation } from "@/components/site/project-navigation";
-import { ColumnGrid } from "@/components/site/image-crop";
 import "./earthen.css";
 
 export const metadata: Metadata = {
@@ -62,20 +61,12 @@ export default function EarthenPage() {
         <p className="earthen-micro earthen-hero__meta">
           Brand strategy / Naming / Program architecture / Identity / Digital / Social · 2022
         </p>
-        <figure className="earthen-hero__media desktop-only">
+        <figure className="earthen-hero__media">
           <svg className="earthen-hero__artwork" viewBox="0 0 1358 560" role="img" aria-label="Earthen identity: sunlit architecture and autumn branches beside the white Earthen wordmark on forest green.">
             <image href="/assets/projects/earthen-figma/hero-photo.jpg" x="0" y="-109" width="679" height="681" preserveAspectRatio="xMidYMid slice" />
             <image href="/assets/projects/earthen-figma/hero-wordmark.svg" x="827" y="238.598" width="390" height="93" />
           </svg>
         </figure>
-        <div className="earthen-hero__mobile mobile-only">
-          <figure className="earthen-hero__logo">
-            <img src="/assets/projects/earthen-figma/hero-wordmark.svg" width="390" height="93" alt="Earthen wordmark on forest green." />
-          </figure>
-          <figure>
-            <img src="/assets/projects/earthen-figma/hero-photo.jpg" width="2086" height="2592" alt="Sunlit architecture and autumn branches." />
-          </figure>
-        </div>
         <p className="earthen-hero__description af-body">
           We helped reposition an established healing practice as Earthen, a broader educational platform for multiple modalities, structured programs, and community.
         </p>
@@ -110,11 +101,9 @@ export default function EarthenPage() {
         <div className="earthen-journey__grid">
           {journey.map(({ number, stage, program, body }) => (
             <article className="earthen-journey__item" key={stage}>
-              <p className="earthen-journey__heading">
-                <span className="earthen-micro">{number}</span>
-                <span className="earthen-journey__stage">{stage}</span>
-              </p>
+              <p className="earthen-micro">{number}</p>
               <div>
+                <p className="earthen-journey__stage">{stage}</p>
                 <h3>{program}</h3>
                 <p className="earthen-journey__body af-body">{body}</p>
               </div>
@@ -181,10 +170,6 @@ export default function EarthenPage() {
             <p className="earthen-identity__sample">Aa</p>
             <p><strong>Canela</strong></p>
             <p>Graphik · Secondary<br />Regular / Medium<br />ABCČĆDĐEFGHIJKLMNOPQRSŠTUVZŽ<br />abcčćdđefghijklmnopqrsštuvzž</p>
-          </div>
-          <div className="earthen-identity__columns mobile-only">
-            <p className="earthen-micro">Twelve column grid</p>
-            <ColumnGrid />
           </div>
         </div>
       </section>

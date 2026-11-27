@@ -61,8 +61,8 @@
 .earthen-hero__number { letter-spacing: .8px; }
 .earthen-hero h1 {
   margin: 24px 0 0;
-  font: 400 25.6px/1.15 "Instrument Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: -.02em;
+  font: 700 64px/68px "Instrument Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: -1.2px;
 }
 .earthen-hero__meta { margin-top: 24px; }
 .earthen-hero__media {
@@ -84,14 +84,14 @@
 }
 
 .earthen-problem {
-  padding-bottom: 68px;
+  height: 772px;
   border-top-width: 2px;
 }
 
 .earthen-problem__inner,
 .earthen-editorial__inner {
   display: grid;
-  grid-template-columns: min(29%, 380px) 1px minmax(0, 876px);
+  grid-template-columns: 380px 1px minmax(0, 876px);
   column-gap: 32px;
   width: calc(100% - 119px);
   margin-left: 41px;
@@ -126,13 +126,16 @@
   grid-column: 3;
   grid-row: 1;
   width: 100%;
+  height: 634px;
   margin: 0;
+  overflow: hidden;
 }
 
 .earthen-problem__media img,
 .earthen-editorial__media img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .earthen-platform {
@@ -171,24 +174,17 @@
 }
 
 .earthen-journey__item > div {
-  margin-top: 20px;
-}
-
-.earthen-journey__heading {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin: 0;
+  margin-top: auto;
 }
 
 .earthen-journey__stage {
-  margin: 0;
-  font: 400 17px/22px var(--af-body-font);
+  margin: 0 0 3px;
+  font: 400 17px/22px Georgia, "Times New Roman", serif;
 }
 
 .earthen-journey__item h3 {
   margin: 0;
-  font: 400 26px/31px var(--af-body-font);
+  font: 400 26px/31px Georgia, "Times New Roman", serif;
   letter-spacing: -0.25px;
 }
 
@@ -196,11 +192,15 @@
   width: 342px;
   max-width: 100%;
   margin: 22px 0 0;
-  font: 400 15px/20px var(--af-body-font);
+  font: 400 15px/20px Georgia, "Times New Roman", serif;
 }
 
 .earthen-editorial {
-  padding-bottom: 48px;
+  height: 1131px;
+}
+
+.earthen-editorial__inner {
+  height: 1083px;
 }
 
 .earthen-editorial__inner > h2 {
@@ -212,7 +212,9 @@
   grid-column: 3;
   grid-row: 1;
   width: 100%;
+  height: 1015px;
   margin: 0;
+  overflow: hidden;
 }
 
 .earthen-applications {
@@ -388,8 +390,10 @@
 
 @media (max-width: 1100px) {
   .earthen-hero,
+  .earthen-problem,
   .earthen-platform,
   .earthen-journey,
+  .earthen-editorial,
   .earthen-applications,
   .earthen-identity,
   .earthen-page .project-footer {
@@ -471,6 +475,16 @@
     line-height: 30px;
   }
 
+  .earthen-problem__media,
+  .earthen-editorial__media {
+    height: auto;
+  }
+
+  .earthen-problem__media img,
+  .earthen-editorial__media img {
+    height: auto;
+  }
+
   .earthen-platform {
     padding: 56px 24px 64px;
   }
@@ -529,8 +543,8 @@
   }
 
   .earthen-hero h1 {
-    font-size: 20.8px;
-    line-height: 1.15;
+    font-size: 52px;
+    line-height: 56px;
   }
 
   .earthen-hero__description {

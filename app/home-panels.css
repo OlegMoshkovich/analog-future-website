@@ -31,7 +31,6 @@
 }
 
 .af-home--panels > .af-manifesto {
-  border-top-left-radius: 0;
   --af-panel-level: 1;
   --af-tab-index: 0;
   --af-panel-color: var(--af-paper);

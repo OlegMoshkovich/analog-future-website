@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { CaseStudyFooter } from "@/components/site/case-study-footer";
 import { ProjectNavigation } from "@/components/site/project-navigation";
-import { ImageCrop } from "@/components/site/image-crop";
-import { MobileScreenshotCarousel } from "@/components/site/mobile-screenshot-carousel";
 import "../case-study-v2.css";
 import "./valmia.css";
 
@@ -26,12 +24,6 @@ const scope = [
   ["04", "UX/UI design"],
   ["05", "Development"],
 ] as const;
-
-const productSlides = [
-  ["Welcome to ValMia", "0 0 575 1200"],
-  ["Circles", "604 0 575 1200"],
-  ["Events", "1199 0 575 1200"],
-].map(([title, crop]) => ({ title, crop, src: "/assets/projects/valmia-figma/product@2x.png", width: 1774, height: 1200, alt: `ValMia app: ${title}.` }));
 
 function ValMiaMark() {
   return (
@@ -60,10 +52,6 @@ export default function ValMiaPage() {
           alt="Friends sharing a picnic in the Alps beside the ValMia identity."
           fetchPriority="high"
         />
-        <div className="vm-hero__mobile mobile-only">
-          <figure><ImageCrop src="/assets/projects/valmia-figma/hero@2x.png" width={2716} height={1120} crop="1718 170 998 780" alt="ValMia brand mark on green." preserveAspectRatio="xMidYMid slice" /></figure>
-          <figure><ImageCrop src="/assets/projects/valmia-figma/hero@2x.png" width={2716} height={1120} crop="0 0 1718 1120" alt="Friends sharing a picnic in the Alps." preserveAspectRatio="xMidYMid slice" /></figure>
-        </div>
         <p className="vm-hero__description af-body">
           ValMia is a community and experience platform for alpine destinations, helping guests, owners, locals, and businesses discover what is happening and participate in village life. Working closely with the founding team, we helped turn the early idea into a connected digital product shaping its strategy, brand, technology, and UX/UI as one coherent system.
         </p>
@@ -74,7 +62,7 @@ export default function ValMiaPage() {
           <p className="vm-micro">The product</p>
           <h2 id="vm-product-title">A digital platform that connects people, places, and experiences.</h2>
         </div>
-        <img className="desktop-only"
+        <img
           src="/assets/projects/valmia-figma/product@2x.png"
           width="1774"
           height="1200"
@@ -82,7 +70,6 @@ export default function ValMiaPage() {
           loading="lazy"
           decoding="async"
         />
-        <MobileScreenshotCarousel id="valmia-product-slides" label="ValMia product" slides={productSlides} />
       </section>
 
       <section className="vm-section vm-strategy" aria-labelledby="vm-strategy-title">
@@ -119,15 +106,12 @@ export default function ValMiaPage() {
         </div>
 
         <div className="vm-community__chart" role="img" aria-label="Owners, guests, locals, and businesses connect through one shared ValMia layer.">
-          <svg className="vm-community__connections" viewBox="0 0 860 330" preserveAspectRatio="none" aria-hidden="true">
+          <svg className="vm-community__connections" viewBox="0 0 860 330" aria-hidden="true">
             <path d="M153 92 677 286M153 286 677 92" />
             <circle cx="153" cy="92" r="4" />
             <circle cx="153" cy="286" r="4" />
             <circle cx="677" cy="92" r="4" />
             <circle cx="677" cy="286" r="4" />
-          </svg>
-          <svg className="vm-community__mobile-connections mobile-only" viewBox="0 0 860 330" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M153 0 707 330M153 330 707 0" fill="none" stroke="rgba(177,196,210,.9)" strokeWidth="1.5" />
           </svg>
           <div className="vm-community__node vm-community__node--owners"><strong>Owners</strong><span>Create activities</span></div>
           <div className="vm-community__node vm-community__node--guests"><strong>Guests</strong><span>Organise meetups</span></div>

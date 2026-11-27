@@ -16,13 +16,13 @@ export default function WeCountPage() {
       <ProjectNavigation />
       <section className="wc-project-intro" aria-labelledby="wc-project-title">
         <div className="wc-intro-meta">
-          <p className="wc-kicker wc-hero__meta">#WeCount / Data visualization</p>
-          <p className="wc-kicker wc-hero__meta">Society of Family Planning</p>
+          <p className="wc-kicker">#WeCount / Data visualization</p>
+          <p className="wc-kicker">Society of Family Planning</p>
         </div>
         <div className="wc-intro-content">
           <div>
             <h1 id="wc-project-title">#WeCount</h1>
-            <p className="wc-project-subtitle af-body">Tracking abortion access after Dobbs.</p>
+            <p className="wc-project-subtitle">Tracking abortion access after Dobbs.</p>
           </div>
           <p className="wc-project-description af-body">#WeCount is a public health research initiative tracking monthly, state-by-state abortion volumes across the United States. This interactive view makes the post-Dobbs data easier to explore, showing how access shifted over time and from state to state.</p>
         </div>
